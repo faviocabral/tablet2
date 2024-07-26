@@ -4162,8 +4162,8 @@ makeblob = function (dataURL) {
             rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
               var callid = Object.keys(rs2); //fco captura los nombres de los campos 
               Object.keys(rs2).forEach(function(key) {  //fco recorre los campos con sus valores 
-                my_codigo = rs2['Codigo'];
-                my_asesor = rs2['Asesor'];
+                my_codigo = rs2['codigo'];
+                my_asesor = rs2['asesor'];
               }); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
               my_html +=  '<li class="list-group-item" style="text-align:left;" onclick="SetAsesor(this)" codigo="' + my_codigo + '"><h2><i class="fa fa-user"></i> &nbsp;&nbsp;&nbsp;' + my_asesor + '</h2></li>';
 
