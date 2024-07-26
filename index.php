@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, user-scalable=no" /> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 
-    <title>GARDEN AUTOMOTORES</title>
+    <title>GOROSTIAGA</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
     <!-- Bootstrap 3.3.5 -->
@@ -197,7 +197,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>GT</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>GARDEN AUTOMOTORES</b></span>
+          <span class="logo-lg"><b>GOROSTIAGA</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -511,7 +511,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 												<option value="3">Garantia</option>
 												<option value="4">Rep. Usado Vta.</option>
 												<option value="5">Promocion</option>
-												<option value="6">Uso Taller/Garden</option>
+												<option value="6">Uso Taller</option>
 												<option value="7">Service en Casa</option>
 											</select>
 										</div>
