@@ -707,7 +707,7 @@ $env = parse_ini_file('.env');
 
 		$consulta = "select fun_codigo Codigo fun_nombres Asesor from funcionarios f where fun_codigo in ( 26, 25, 28, 31, 0) ";
 		
-		$rs = pg_query( $conexión, $consulta );
+		$rs = pg_query( $conexión2, $consulta );
 		if ( !$rs )
 		{
 			exit( "Error en la consulta SQL" );
