@@ -705,30 +705,17 @@ $env = parse_ini_file('.env');
 
 	} elseif($funcion == 'Asesor' ){
 
-		if($sucursal == 'alider'  || $sucursal == 'mra fca'  ){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 18 and Branch = 1 ";
-		}elseif($sucursal == 'abay-fca'  || $sucursal == 'abay-kia' ){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 18 and Branch in(1,9) ";
-		}elseif($sucursal == 'mpy'  || $sucursal == 'mra mpy' || $sucursal == 'abay-mpy' ){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 1 and Branch = 1 ";
-		}elseif($sucursal == 'victoria' || $sucursal == 'mra kia' ){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 18 and Branch = 9 ";
-		}elseif($sucursal == 'choferes'){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 18 and Branch = 15 ";
-		}elseif($sucursal == 'mini-moto'){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 18 and Branch = 3 ";
-		}elseif($sucursal == '001' || $sucursal == '002' || $sucursal == '003' || $sucursal == '004' || $sucursal == '005' || $sucursal == 'abay-nissan' ){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 1 and Branch in (1, 2, 3 , 4, 9)  ";
-		}elseif($sucursal == 'cde' ){
-			$consulta = "select USERID Codigo, upper( U_NAME) Asesor from OUSR with(nolock) where Department = 1 and Branch in (-2)  ";
-		}
-
-		//fco resultado de varios registros en json
-		$rs = odbc_exec( $conexión, $consulta );
-		$valor = array();
-		while ( $row = odbc_fetch_array($rs) )
+		$consulta = "select fun_codigo Codigo fun_nombres Asesor from funcionarios f where fun_codigo in ( 26, 25, 28, 31, 0) ";
+		
+		$rs = pg_query( $conexión, $consulta );
+		if ( !$rs )
 		{
-			$valor[] = array_map('utf8_encode', $row );
+			exit( "Error en la consulta SQL" );
+		}
+		//fco resultado de varios registros en json 
+		while ( $row = pg_fetch_array($rs) )
+		{
+			$valor[] = $row;
 		}	
 		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
 		////odbc_close ( $conexion );
