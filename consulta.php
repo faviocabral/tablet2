@@ -705,7 +705,7 @@ $env = parse_ini_file('.env');
 
 	} elseif($funcion == 'Asesor' ){
 
-		$consulta = "select fun_codigo Codigo fun_nombres Asesor from funcionarios f where fun_codigo in ( 26, 25, 28, 31, 0) ";
+		$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in ( 26, 25, 28, 31, 0) ";
 		
 		$rs = pg_query( $conexión2, $consulta );
 		if ( !$rs )
