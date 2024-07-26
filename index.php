@@ -4153,7 +4153,7 @@ makeblob = function (dataURL) {
       var sucu = localStorage.sucursal; 
       //fco ajax consultar datos!!!
       console.log(sucu);
-      $.ajax( { method: "POST", url: window.origin + "/consulta.php", data : { funcion: 'Asesor' , sucursal : sucu }, dataType: 'json'})
+      $.ajax( { method: "POST", url: "/consulta.php", data : { funcion: 'Asesor' , sucursal : sucu }, dataType: 'json'})
       .done(function(rs){
         if(rs){
           var my_html = '<ul class="list-group">\n' , my_codigo, my_asesor; 
