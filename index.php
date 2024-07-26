@@ -87,8 +87,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 	
 	<!--mensajes-->
-  <script src="sweetalert2/dist/sweetalert2.min.js"></script> 
-	<link type="text/css" href="sweetalert2/dist/sweetalert2.min.css" rel="stylesheet"> 
+  <script src="/sweetalert2/dist/sweetalert2.min.js"></script> 
+	<link type="text/css" href="/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet"> 
 	
 	<!--box steps-->
 	<link rel="stylesheet" type="text/css" href="steps/steps.css"> 
