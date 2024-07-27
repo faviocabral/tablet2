@@ -2338,6 +2338,7 @@ async	function NuevoCliente(){
                   campo = "#" + callid[id] , id++; 
                   html = rs2[key];
                   html = html.replace(/@/g, '"');
+                  console.log('html ', html)
                   $('#Resultado').append(html);
                 }
               }); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
