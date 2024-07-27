@@ -2334,8 +2334,8 @@ async	function NuevoCliente(){
             rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
               var callid = Object.keys(rs2); //fco captura los nombres de los campos 
               Object.keys(rs2).forEach(function(key) {  //fco recorre los campos con sus valores 
-                if(key === 'html'){
-                  campo = "#" + callid[id] , id++; //fco esta linea es para asignar automaticamente con el campo del form -> $(#campo).val(rs2[key]) //este apartado asigna al form 
+                if(key === '0'){
+                  campo = "#" + callid[id] , id++; 
                   html = rs2[key];
                   html = html.replace(/@/g, '"');
                   $('#Resultado').append(html);
