@@ -164,7 +164,7 @@ $env = parse_ini_file('.env');
 							and pro_chassis like '%$CodigoCliente%'
 						)Tabla1 
 				`;
-		echo $consulta;
+		echo json_encode($consulta);
 
 		// $rs = pg_query( $conexión2, $consulta );
 		// if ( !$rs )
