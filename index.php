@@ -2337,8 +2337,7 @@ async	function NuevoCliente(){
                 if(key === 'html'){
                   campo = "#" + callid[id] , id++; //fco esta linea es para asignar automaticamente con el campo del form -> $(#campo).val(rs2[key]) //este apartado asigna al form 
                   html = rs2[key];
-                  html = html.replace(/@/g, "'");
-                  html = html.replace(/%/g, '"');
+                  html = html.replace(/@/g, '"');
                   $('#Resultado').append(html);
                 }
               }); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
