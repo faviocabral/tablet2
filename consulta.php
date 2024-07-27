@@ -165,7 +165,7 @@ $env = parse_ini_file('.env');
 						)Tabla1 
 				";
 
-		$rs = pg_query( $conexión, $consulta );
+		$rs = pg_query( $conexión2, $consulta );
 		if ( !$rs )
 		{
 			exit( "Error en la consulta SQL" );
