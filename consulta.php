@@ -141,14 +141,14 @@ $env = parse_ini_file('.env');
 		//fco sql server toma la '' como ' en la consulta a tener en cuenta cuando se quiere trabajar con las comillas por en php uso " para que no se solapen.. 
 		//fco aqui ya armo el html para el retorno de la consulta de clientes para tener un codigo limpio en php y javascript
 		$consulta = 
-				`
+				"
 					select 
-						'<div class="panel-heading"  data-toggle="collapse" data-parent="#accordion" href=".' || itemcode || '" data-trigger="focus" >' ||
+						'<div class=@panel-heading@  data-toggle=@collapse@ data-parent=@#accordion@ href=@.' || itemcode || '@ data-trigger=@focus@ >' ||
 							'<span class=''glyphicon glyphicon-user''></span>&nbsp;' ||customer||' - '|| custmrName || 
 						'</div>' ||
-						'<div class="panel-collapse collapse list-group-item-'|| CASE when 1 % 2 = 0 then 'danger ' else 'info ' end || itemcode || '">' ||
-							'<div class="panel-body" data-cliente="' || customer || '" id="'|| itemCode ||'" vin="'|| vin ||'" onclick="AsignarCliente(this)" > ' ||
-								'<i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;' || itemCode || ' - ' || itemName || 
+						'<div class=@panel-collapse collapse list-group-item-'|| CASE when 1 % 2 = 0 then 'danger ' else 'info ' end || itemcode || '@>' ||
+							'<div class=@panel-body@ data-cliente=@' || customer || '@ id=@'|| itemCode ||'@ vin=@'|| vin ||'@ onclick=@AsignarCliente(this)@ > ' ||
+								'<i class=@fa fa-car@ aria-hidden=@true@></i>&nbsp;&nbsp;' || itemCode || ' - ' || itemName || 
 							'</div>' ||
 						'</div>'	
 					from ( 
@@ -163,7 +163,7 @@ $env = parse_ini_file('.env');
 							where rub_codigo = 0 
 							and pro_chassis like '%$CodigoCliente%'
 						)Tabla1 
-				`;
+				";
 		echo $consulta;
 
 		// $rs = pg_query( $conexión2, $consulta );
