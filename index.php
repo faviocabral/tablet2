@@ -2322,14 +2322,29 @@ async	function NuevoCliente(){
 						//fco consulta automatizada se debe poner el mismo nombre del form como los campos del sql para que funcione auto 
 						var id = 0 , campo; //fco esta linea obtiene el nombre de los campos 
 						$('#Resultado > *').remove(); //fco vacia el body de la tabla 
-						rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-							var callid = Object.keys(rs2); //fco captura los nombres de los campos 
-							Object.keys(rs2).forEach(function(key) { //fco recorre los campos con sus valores 
-								campo = "#" + callid[id] , id++; //fco esta linea es para asignar automaticamente con el campo del form -> $(#campo).val(rs2[key]) //este apartado asigna al form 
-								$('#Resultado').append(rs2[key]);
-							}); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
-							id = 0;
-						});
+						// rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
+						// 	var callid = Object.keys(rs2); //fco captura los nombres de los campos 
+						// 	Object.keys(rs2).forEach(function(key) { //fco recorre los campos con sus valores 
+						// 		campo = "#" + callid[id] , id++; //fco esta linea es para asignar automaticamente con el campo del form -> $(#campo).val(rs2[key]) //este apartado asigna al form 
+						// 		$('#Resultado').append(rs2[key]);
+						// 	}); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
+						// 	id = 0;
+						// });
+
+            rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
+              var callid = Object.keys(rs2); //fco captura los nombres de los campos 
+              Object.keys(rs2).forEach(function(key) {  //fco recorre los campos con sus valores 
+                if(key === 'html'){
+                  campo = "#" + callid[id] , id++; //fco esta linea es para asignar automaticamente con el campo del form -> $(#campo).val(rs2[key]) //este apartado asigna al form 
+                  html = rs2[key];
+                  html = html.replace(/@/g, "'");
+                  html = html.replace(/%/g, '"');
+                  $('#Resultado').append(html);
+                }
+              }); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
+              id = 0;
+            });
+
 						if ( $('#BuscarCliente').val().length == 0 ){$('#Resultado > *').remove(); } //fco para prevenir que no quede nada colgado
 						//console.log($('#BuscarCliente').val().length);
 					}	
