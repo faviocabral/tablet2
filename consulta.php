@@ -219,14 +219,6 @@ $env = parse_ini_file('.env');
 		//fco para consultar turnos 
 		//conexion directa //esto hay que llevar a una libreria para mas adelante... y hacer el include... 
 
-		$base = 'agenda2';
-
-		$dbhost 	= 'localhost';
-		$dbpuerto 	= '5432';
-		$dbcontrasena = 'postgres';
-		$dbusuario	= 'postgres';
-		$db			= $base;
-		$con		= pg_connect("host=$dbhost port=$dbpuerto password=$dbcontrasena user=$dbusuario dbname=$db") or die('No se pudo conectar'.$con);
 		$filtro = "";
 		$consulta = 
 			"
@@ -252,7 +244,7 @@ $env = parse_ini_file('.env');
 				AND length(trim(nombre))>3 
 				ORDER BY 1 
 			";
-		$rs = pg_query($con, $consulta);
+		$rs = pg_query($conexión, $consulta);
 		if ( !$rs )
 		{
 			exit( "Error en la consulta SQL" );
