@@ -143,36 +143,26 @@ $env = parse_ini_file('.env');
 		$consulta = 
 				"
 					select 
-						case when hijo = 1 then 
-							'<div class=''panel-heading '' data-toggle=''collapse'' data-parent=''#accordion'' href=''.' || customer2 || ''' data-trigger=''focus'' >' ||
-								'<span class=''glyphicon glyphicon-user''></span>&nbsp;' ||customer||' - '|| custmrName || 
+						'<div class=''panel-heading '' data-toggle=''collapse'' data-parent=''#accordion'' href=''.' || itemcode || ''' data-trigger=''focus'' >' ||
+							'<span class=''glyphicon glyphicon-user''></span>&nbsp;' ||customer||' - '|| custmrName || 
+						'</div>' ||
+						'<div class='' panel-collapse collapse list-group-item-'|| CASE when 1 % 2 = 0 then 'danger ' else 'info ' end || itemcode || '''>' ||
+							'<div class=''panel-body'' data-cliente=''' || customer || ''' id='''|| itemCode ||''' || ''' vin='''|| vin ||''' onclick=''AsignarCliente(this)'' > ' ||
+								'<i class=''fa fa-car'' aria-hidden=''true''></i>&nbsp;&nbsp;' || itemCode || ' - ' || itemName || 
 							'</div>' ||
-							'<div class='' panel-collapse collapse list-group-item-'|| CASE when hijo % 2 = 0 then 'danger ' else 'info ' end || customer2 || '''>' ||
-								'<div class=''panel-body'' data-cliente=''' || customer || ''' id='''|| itemCode ||''' onclick=''AsignarCliente(this)'' > ' ||
-									'<i class=''fa fa-car'' aria-hidden=''true''></i>&nbsp;&nbsp;' || itemCode || ' - ' || itemName || 
-								'</div>' ||
-							'</div>'	
-						else 
-							'<div class='' panel-collapse collapse list-group-item-'|| CASE when hijo % 2 = 0 then 'danger ' else 'info ' end || customer2 || '''>' ||
-								'<div class=''panel-body'' data-cliente=''' || customer || ''' id='''|| itemCode ||''' onclick=''AsignarCliente(this)'' > ' ||
-									'<i class=''fa fa-car'' aria-hidden=''true''></i>&nbsp;&nbsp;' || itemCode || ' - ' || itemName || 
-								'</div>' ||
-							'</div>'	
-						end html 
+						'</div>'	
 					from ( 
 							select 
-								replace( replace( replace( customer , '/', '' ), ' ', '' ), '.', '') as customer2 
-								, customer 
-								, custmrName custmrName 
-								, itemCode 
-								, itemName itemName 
-								,ROW_NUMBER() over(partition by customer order by customer , createDate desc ) hijo 
-							from oins 
-							where ( customer like '%$CodigoCliente%' or custmrName like replace( '%$CodigoCliente%' , ' ' , '%') or itemCode like '%$CodigoCliente%' ) 
-							order by customer, ROW_NUMBER() over(partition by customer order by customer, createDate desc )
-
+								'' as customer2 
+								, '' as customer 
+								, '' as custmrName 
+								, pro_chassis vin
+								,pro_codigo as itemCode 
+								, pro_descripcion_local as itemName 
+							from productos
+							where rub_codigo = 0 
+							and pro_chassis like '%$CodigoCliente%'
 						)Tabla1 
-					order by customer, hijo 
 				";
 
 		$rs = pg_query( $conexión, $consulta );
