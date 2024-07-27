@@ -164,18 +164,20 @@ $env = parse_ini_file('.env');
 							and pro_chassis like '%$CodigoCliente%'
 						)Tabla1 
 				`;
+		echo $consulta;
 
-		$rs = pg_query( $conexión2, $consulta );
-		if ( !$rs )
-		{
-			exit( "Error en la consulta SQL" );
-		}
-		//fco resultado de varios registros en json 
-		while ( $row = pg_fetch_array($rs) )
-		{
-			$valor[] = $row;
-		}	
-		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
+		// $rs = pg_query( $conexión2, $consulta );
+		// if ( !$rs )
+		// {
+		// 	exit( "Error en la consulta SQL" );
+		// }
+		// //fco resultado de varios registros en json 
+		// while ( $row = pg_fetch_array($rs) )
+		// {
+		// 	$valor[] = $row;
+		// }	
+		// echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
+
 
 	} elseif($funcion == 'ConsultarCliente2'){
 
