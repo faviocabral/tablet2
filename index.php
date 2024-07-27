@@ -2337,7 +2337,7 @@ async	function NuevoCliente(){
                 if(key === '0'){
                   campo = "#" + callid[id] , id++; 
                   html = rs2[key];
-                  html = html.replace(/@/g, '"');
+                  //html = html.replace(/@/g, '"');
                   console.log('html ', html)
                   $('#Resultado').append(html);
                 }
