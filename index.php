@@ -2329,6 +2329,7 @@ async	function NuevoCliente(){
 						// });
 
             rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
+              alert(Object.keys(rs2))
               var callid = Object.keys(rs2); //fco captura los nombres de los campos 
               Object.keys(rs2).forEach(function(key) {  //fco recorre los campos con sus valores 
                 if(key === '0'){
