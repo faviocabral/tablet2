@@ -1018,9 +1018,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			  html:
 				'<div class="btn-group btn-group-justified">'+ 
           '<a href="#simple_sketch" id="auto" class="btn btn-default" onclick="AgregarImagen(1); Focus(1);"> <i class="fa fa-car"></i> </a> '+
-          '<a href="#simple_sketch" id="auto2" class="btn btn-default" onclick="AgregarImagen(4); Focus(4);"> <i class="fa fa-cab"></i> </a> '+
           '<a href="#simple_sketch" id="camioneta" class="btn btn-default" onclick="AgregarImagen(2);Focus(2)"> <i class="fa fa-truck"></i> </a>'+
-          '<a href="#simple_sketch" id="moto" class="btn btn-default" onclick="AgregarImagen(3);Focus(3)"> <i class="fa fa-motorcycle"></i> </a>'+
 					'<a href="#simple_sketch" id="guardar_imagen" class="btn btn-default" onclick="GuardarImagen();"> <i class="fa fa-save"></i> </a> '+
 				'</div> '+
 				'<div class="container-fluid"><div class="row"><canvas id="simple_sketch" style="border: 1px solid gray; width:100%; height:310px; background-attachment: fixed; background-position: center; background-repeat: no-repeat; overflow:inherit;" ></canvas></div></div>' +
