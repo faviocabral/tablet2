@@ -364,10 +364,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="col-md-0"> 
         <div class="box" style="margin-bottom:5px;"> 
         <center>
-            <div class="btn-group btn-group-justified" style="height: 80px;">
+            <!-- <div class="btn-group btn-group-justified" style="height: 80px;">
               <a href="#" class="btn btn-danger" style="font-size: 30px;" onclick="setSucursal(this)" id="servicio" base="agenda2" name="servicio"><strong>SUCURSAL 1</strong></a>
-              <!-- <a href="#" class="btn btn-default" onclick="setSucursal(this)" id="MPY" base="mpy" name ="MPY"><strong>MPY</strong></a> -->
-            </div> 
+            </div>  -->
           </center>
         </div> 
       </div> 
