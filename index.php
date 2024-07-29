@@ -2316,7 +2316,6 @@ async	function NuevoCliente(){
 					console.log( rs );//fco para ver en la consola de la web 
 					if (rs.length > 0 ){
             rs = rs.map(item=> item['0'].replaceAll('@', '"'))
-            alert(JSON.stringify(rs))
 						//fco consulta automatizada se debe poner el mismo nombre del form como los campos del sql para que funcione auto 
 						var id = 0 , campo; //fco esta linea obtiene el nombre de los campos 
 						$('#Resultado > *').remove(); //fco vacia el body de la tabla 
@@ -2335,6 +2334,7 @@ async	function NuevoCliente(){
                 if(key === '0'){
                   campo = "#" + callid[id] , id++; 
                   html = rs2[key];
+                  alert(html)
                   //html = html.replace(/@/g, '"');
                   console.log('html ', html)
                   $('#Resultado').append(html);
