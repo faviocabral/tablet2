@@ -259,24 +259,15 @@ $env = parse_ini_file('.env');
 		  die("Solicitud no válida.");
 		}
 		
-		$dbhost 	= 'localhost';
-		$dbpuerto 	= '5432';
-		$dbcontrasena = 'postgres';
-		$dbusuario	= 'postgres';
-		$db			= 'agenda2';
-
-
-		$con		= pg_connect("host=$dbhost port=$dbpuerto password=$dbcontrasena user=$dbusuario dbname=$db") or die('No se pudo conectar'.$con);
-		
 		$consulta = "UPDATE public.fichas SET ESTADO_ATENCION = 3, ESTADO = '2' WHERE ID_FICHA =  $codigo" ; // LLAMADO";
-		$rs = pg_query($con, $consulta);
+		$rs = pg_query($conexión, $consulta);
 		if ( !$rs )
 		{
 			echo "Error en la actualizacion";
 		}else{
 			echo "Exito en la actualizacion";
 		}
-		pg_close($con);
+		pg_close($conexión);
 
 	} elseif($funcion == 'SetTurnosContactar') {
 
@@ -285,23 +276,17 @@ $env = parse_ini_file('.env');
 		} else {
 		  die("Solicitud no válida.");
 		}
-		
-		$dbhost 	= 'localhost';
-		$dbpuerto 	= '5432';
-		$dbcontrasena = 'postgres';
-		$dbusuario	= 'postgres';
-		$db			= 'agenda2';
-		$con		= pg_connect("host=$dbhost port=$dbpuerto password=$dbcontrasena user=$dbusuario dbname=$db") or die('No se pudo conectar'.$con);
+	
 		
 		$consulta = "UPDATE public.fichas SET ESTADO_ATENCION = 2 WHERE ID_FICHA =  $codigo" ; // LLAMADO";
-		$rs = pg_query($con, $consulta);
+		$rs = pg_query($conexión, $consulta);
 		if ( !$rs )
 		{
 			echo "Error en la actualizacion";
 		}else{
 			echo "Exito en la actualizacion";
 		}
-		pg_close($con);
+		pg_close($conexión);
 
 
 	} elseif($funcion == 'AsignarCliente') {
