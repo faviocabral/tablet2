@@ -2315,7 +2315,7 @@ async	function NuevoCliente(){
 				.done(function(rs) {
 					console.log( rs );//fco para ver en la consola de la web 
 					if (rs.length > 0 ){
-            rs = rs.map(item=> item['0'].replaceAll('@', '"'))
+            //rs = rs.map(item=> item['0'].replaceAll('@', '"'))
 						//fco consulta automatizada se debe poner el mismo nombre del form como los campos del sql para que funcione auto 
 						var id = 0 , campo; //fco esta linea obtiene el nombre de los campos 
 						$('#Resultado > *').remove(); //fco vacia el body de la tabla 
