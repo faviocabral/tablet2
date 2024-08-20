@@ -2321,7 +2321,7 @@ async	function NuevoCliente(){
 						$('#Resultado > *').remove(); //fco vacia el body de la tabla 
             let html = `<ul class="list-group">`
             rs.forEach( function ( item ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-              html +=`<li class="list-group-item">${ item.itemcode} - ${ item.vin} - ${ item.itemname}</li> \n`
+              html +=`<li class="list-group-item" data-vin="${item.itemcode}" data-vehiculo="${item.itemname}" onclick="AsignarCliente(this)" >${ item.itemcode} - ${ item.vin} - ${ item.itemname}</li> \n`
             });
             html +=`</ul>`
             console.log(html)
