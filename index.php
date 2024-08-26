@@ -2012,22 +2012,23 @@ async	function NuevoCliente(){
         var chassis = $(el).attr('id'); 
         var cliente = $(el).attr('data-cliente'); 
         var sucu = localStorage.sucursal;
+        $("#chassis").val($(el).attr('data-codigo'))
+        $("#NroSerie").val($(el).attr('data-vin'))
+        $("#NroSerie2").val($(el).attr('data-vin'))
+        $("#Vehiculo").val($(el).attr('data-vehiculo'))
         sucu = sucu.toLowerCase(); 
+        swal({
+							type: 'success' ,
+							html: 'Consulta exitosa' 
+						})
 
+/*
 				$.ajax( { method: "POST", url: "consulta.php", data : { Chassis : chassis , Cliente : cliente , funcion: 'AsignarCliente', sucursal: sucu }, dataType: 'json'})
 				//fco exito en la consulta 
 				.done(function(rs) {
 					console.log( rs ); //fco para ver en la consola de la web 
 					if (rs ){
 						//fco consulta automatizada se debe poner el mismo nombre del form como los campos del sql para que funcione auto 
-/*						var callid = Object.keys(rs) , id = 0 , campo ; //fco esta linea obtiene el nombre de los campos 
-
-						Object.keys(rs).forEach(function(key) { 
-							campo = "#" + callid[id]; id++; 
-							$(campo).val(rs[key]);
-              console.log(rs[key]);
-						}); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
-*/
             var id = 0 , campo , chassis2;
             rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
               var callid = Object.keys(rs2) ; //fco captura los nombres de los campos 
@@ -2084,6 +2085,9 @@ async	function NuevoCliente(){
 						html: 'Error en la consulta<br>' + err
 					});
 				})
+*/
+
+
 		}
 
     function ConsultarPlanPlus(chassis){
@@ -2291,7 +2295,7 @@ async	function NuevoCliente(){
         console.log('error en la consulta de mora..  ' + error );
         $("#spinnerMora").css("visibility", "hidden");
       });
-      
+ 
     }
 
 
@@ -2576,7 +2580,6 @@ async	function NuevoCliente(){
 				cancelButtonText:'Cancelar' 
 			}); 
 			MostrarTurnos();	
-
 		}
 		
 		function MostrarTurnos(){ 
