@@ -1994,7 +1994,7 @@ async	function NuevoCliente(){
           '<div class="col-sm-12" style="margin-top:5px;">'+
             '<div class="input-group">'+
               '<div class="input-group-btn">'+
-                '<input type="text" id="BuscarCliente" name="BuscarCliente" class="form-control lock" placeholder="" onchange="MostrarCliente();" style="width:100%;">'+
+                '<input type="text" id="BuscarCliente" name="BuscarCliente" class="form-control lock" placeholder="" onchange="MostrarCliente2();" style="width:100%;">'+
               '</div>'+
             '</div>'+
           '</div>'+
