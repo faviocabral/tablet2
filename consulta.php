@@ -223,7 +223,7 @@ $env = parse_ini_file('.env');
 			
 		  $consulta = 
 				  "
-				  insert into oscl (docnum , customer , customerName , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , dscription , subject, room, nombreasesor )
+				  insert into oscl ( docnum , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor )
 				  values (0, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor');
 
 				  select * from oscl order by callid desc limit 1 ;
