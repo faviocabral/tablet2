@@ -205,7 +205,7 @@ $env = parse_ini_file('.env');
 		  }
 		  $array = array(); 
 		  parse_str($datos, $array); 
-		  echo json_encode($array);
+		  //echo json_encode($array);
 
 		  $customer = $array['CodigoCliente'];
 		  $customerName = $array['NombreCliente'];
@@ -217,7 +217,7 @@ $env = parse_ini_file('.env');
 		  $nombreAsesor = $array['NombreAsesor'];
 		  $u_kmEntrada = $array['Kilometraje'];
 		  $u_tipo = $array['TipoServicio'];
-		  $calltype = $array['TipoLlamada'];
+		  $callType = $array['TipoLlamada'];
 		  $description = $array['PedidoCliente'];
 		  $subject = $array['Motivo'];
 		  $room = $array['Identificador'];
@@ -225,14 +225,14 @@ $env = parse_ini_file('.env');
 		  $consulta = 
 				  "
 				  insert into oscl ( docnum , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor )
-				  values (0, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', $status, $assignee, $u_kmEntrada, $u_tipo, $callType, '$description', '$subject', '$room', '$nombreAsesor');
+				  values (0, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor');
 
 				  select * from oscl order by callid desc limit 1 ;
 
 				  ";
 
-		echo $consulta;
-  /*
+		//echo $consulta;
+  
 		  $rs = pg_query( $conexión, $consulta );
 		  if ( !$rs )
 		  {
@@ -245,7 +245,7 @@ $env = parse_ini_file('.env');
 		  }	
 		  echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
 
-		  */
+		  
 
 
 	} elseif($funcion == 'ConsultarTurnos'){
