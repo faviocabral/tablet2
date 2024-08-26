@@ -3040,7 +3040,7 @@ async	function NuevoCliente(){
             .done(function(rs) {
               console.log('paso por control... ');
               console.log(rs);
-                GuardarImagen2(rs); //guardar la imagen del combustible ... 
+                //GuardarImagen2(rs); //guardar la imagen del combustible ... 
                 //ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
                 RecuperarOt(rs); 
             })
@@ -3048,7 +3048,7 @@ async	function NuevoCliente(){
               swal({ 
                   type: 'error', 
                     title: 'Atencion', 
-                    html: res.message 
+                    html: error 
                 }); 
               return;
               console.log(error);
