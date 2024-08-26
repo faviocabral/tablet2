@@ -484,7 +484,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <span class="label label-warning" style="padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <input type="text" class="text-black" style="border-radius: 5px;" id="contacto_email" name="contacto_email" placeholder="____________@_______.com"></span>
                     </h3>
                     </div>
-										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Cliente:</label></div> <div class="col-sm-3"> <div class="input-group"><div class="input-group-btn" > <button type="button" class="btn btn-warning" onclick="ConsultarCliente();"><i class="fa fa-search-plus">&nbsp;&nbsp;</i></button> </div> <input type="text" class="form-control lock" placeholder="" id="CodigoCliente" name="CodigoCliente"></div></div> <div class="col-sm-9"><input type="text" class="form-control lock" placeholder="" id="NombreCliente" name="NombreCliente"></div> </div>
+										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Cliente:</label></div> <div class="col-sm-3"> <div class="input-group"><div class="input-group-btn" > <button type="button" class="btn btn-warning" onclick="ConsultarCliente2();"><i class="fa fa-search-plus">&nbsp;&nbsp;</i></button> </div> <input type="text" class="form-control lock" placeholder="" id="CodigoCliente" name="CodigoCliente"></div></div> <div class="col-sm-9"><input type="text" class="form-control lock" placeholder="" id="NombreCliente" name="NombreCliente"></div> </div>
 										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Telefono:</label></div> <div class="col-sm-12"><input type="text" id="Telefono" name="telefono" class="form-control lock" placeholder="" ></div></div>
                     <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Chassis:</label></div> <div class="col-sm-12"><input type="text" id="Chassis" name="Chassis" class="form-control lock" placeholder="" ></div></div>
                     <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Nro Serie:</label></div> <div class="col-sm-12"><input type="text" id="NroSerie" name="NroSerie" class="form-control lock" placeholder="" ><input type="text" id="NroSerie2" name="NroSerie2" class="form-control lock" placeholder="" ></div></div>
@@ -1945,37 +1945,21 @@ async	function NuevoCliente(){
 		
 		function ConsultarCliente(){
 			swal({
-				title: ' <button id="superboton" class="btn btn-success" style="border-radius:50%;"><i class="fa fa-plus " style="font-size:36px;"></i></button> Buscar Cliente o Vehiculo',
-				//title: 'Buscar Cliente o Vehiculo  <a id="NuevoCliente" href="#" onclick="NuevoCliente()"><i class="fa fa-plus-circle text-green pull-right" style="font-size:50px;"></i></a>',
+				title: ' <button id="superboton" class="btn btn-success" style="border-radius:50%;"><i class="fa fa-plus " style="font-size:36px;"></i></button> Buscar Vehiculo',
 
 				html: 
-          //'<div class="row input-lg"><input type="text" id="BuscarCliente" style="width:100%;" onchange="MostrarCliente();" ></div>'+
-            //Direccion 
           '<div class="col-sm-12" style="margin-top:5px;">'+
             '<div class="input-group">'+
               '<div class="input-group-btn">'+
                 '<input type="text" id="BuscarCliente" name="BuscarCliente" class="form-control lock" placeholder="" onchange="MostrarCliente();" style="width:100%;">'+
-                /*'<button type="button" class="btn btn-default" onclick="MostrarCliente();" >'+
-                  '<i class="fa fa-search">&nbsp;&nbsp;</i>'+
-                '</button>'+*/
               '</div>'+
             '</div>'+
           '</div>'+
-          //
-          //Direccion 
         '<div class="col-sm-12" style="margin-top:5px;">'+
-            //'<div class="input-group">'+
-              //'<div class="input-group-btn">'+
                 '<div class="panel panel-default" id="Resultado" style="font-size:12px; text-align:left; width:100%;"></div>'+
                 '<span id="help1" class="label label-danger pull-left">'+
-              //'</div>'+
-          //'</div>'+
         '</div>',
 
-				//'<div class="box">'+
-				//'	<div class="panel panel-default" id="Resultado" style="font-size:12px; text-align:left;"></div>'+
-        //' </div>'+
-				//'</div>',
 				showCancelButton: true,
 				showConfirmButton: true,
         confirmButtonText: 'buscar',
@@ -1999,14 +1983,64 @@ async	function NuevoCliente(){
         document.getElementById("BuscarCliente").focus();
       }, 200);
 
-      // if( $('div.swal2-modal').find('button[id="nuevo-cliente"]').length === 0 ){
-      //   $("div.swal2-modal").append('<button type="button" onclick="NuevoCliente()" id="nuevo-cliente" class=" swal2-styled btn-info">Nuevo Cliente</button>')
-      // } else{
-      //   $("#nuevo-cliente").remove()
-      //   $("div.swal2-modal").append('<button type="button" onclick="NuevoCliente()" id="nuevo-cliente" class=" swal2-styled btn-info">Nuevo Cliente</button>')
-      // }
+		}
+
+		function ConsultarCliente2(){
+			swal({
+				title: ' <button id="superboton" class="btn btn-success" style="border-radius:50%;"><i class="fa fa-plus " style="font-size:36px;"></i></button> Buscar Cliente',
+
+				html: 
+            //Direccion 
+          '<div class="col-sm-12" style="margin-top:5px;">'+
+            '<div class="input-group">'+
+              '<div class="input-group-btn">'+
+                '<input type="text" id="BuscarCliente" name="BuscarCliente" class="form-control lock" placeholder="" onchange="MostrarCliente();" style="width:100%;">'+
+              '</div>'+
+            '</div>'+
+          '</div>'+
+          //Direccion 
+        '<div class="col-sm-12" style="margin-top:5px;">'+
+                '<div class="panel panel-default" id="Resultado" style="font-size:12px; text-align:left; width:100%;"></div>'+
+                '<span id="help1" class="label label-danger pull-left">'+
+        '</div>',
+
+				showCancelButton: true,
+				showConfirmButton: true,
+        confirmButtonText: 'buscar',
+				allowOutsideClick: false, 
+        //closeOnConfirm: false,
+        preConfirm: ()=>{
+          if($("#BuscarCliente").val().length == 0 ){
+             swal.showValidationError("Ingrese valor")
+             //resolve()
+          }else {
+            showLoaderOnConfirm: true,
+            swal.resetValidationError()
+          }
+        }, 
+        onClose: ()=>{ $("#nuevo-cliente").remove() }
+			}).then((result)=>{ console.log('datos del swal ', result) })
+
+      $("#superboton").on('click', ()=> NuevoCliente() )
+      setTimeout(function(){ 
+        $("#BuscarCliente").focus();
+        document.getElementById("BuscarCliente").focus();
+      }, 200);
 
 		}
+
+		function AsignarCliente2(el){
+        var sucu = localStorage.sucursal;
+        $("#CodigoCliente").val($(el).attr('data-codigo'))
+        $("#NombreCliente").val($(el).attr('data-nombre'))
+        $("#Telefono").val($(el).attr('data-telefono'))
+        sucu = sucu.toLowerCase(); 
+        swal({
+							type: 'success' ,
+							html: 'Consulta exitosa' 
+						})
+
+    }
 
 		function AsignarCliente(el){
         var chassis = $(el).attr('id'); 
@@ -2022,72 +2056,6 @@ async	function NuevoCliente(){
 							type: 'success' ,
 							html: 'Consulta exitosa' 
 						})
-
-/*
-				$.ajax( { method: "POST", url: "consulta.php", data : { Chassis : chassis , Cliente : cliente , funcion: 'AsignarCliente', sucursal: sucu }, dataType: 'json'})
-				//fco exito en la consulta 
-				.done(function(rs) {
-					console.log( rs ); //fco para ver en la consola de la web 
-					if (rs ){
-						//fco consulta automatizada se debe poner el mismo nombre del form como los campos del sql para que funcione auto 
-            var id = 0 , campo , chassis2;
-            rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-              var callid = Object.keys(rs2) ; //fco captura los nombres de los campos 
-              Object.keys(rs2).forEach(function(key) { //fco recorre los campos con sus valores 
-                campo = "#" + callid[id] , id++; //fco esta linea es para asignar automaticamente con el campo del form -> $(#campo).val(rs2[key]) //este apartado asigna al form 
-                chassis2 = rs2['Chassis']; 
-                $(campo).val(rs2[key]); 
-              }); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
-              id = 0;
-            });
-
-            $("#nuevo-cliente").remove()
-						//fco mensaje de exito 
-						swal({
-							type: 'success' ,
-							html: 'Consulta exitosa' 
-						}).then(function(e){
-              var mora = ConsultarMora(chassis2); 
-              consultarVinConProblemas(chassis2)              
-              ConsultarPlanPlus(chassis2);
-              ConsultarPlanMini(chassis2);
-              consultarEncuesta(chassis2);
-              console.log('cliente tiene mora ????  ' + mora );
-              if (mora > 0 ){
-                swal({
-                  type: 'warning',
-                  html: 'Cliente con mora de ' + mora + ' dias !!!' 
-                }).then(function(){
-                  Campaña(chassis2);
-                });
-              }else {
-                 Campaña(chassis2);
-              }
-
-            });
-        
-					}	
-					else{ //fco no existen registros !!!
-						swal({
-							type: 'warning',
-							html: 'No existen registros !!!' 
-						}).then(function(){
-							ConsultarCliente();
-						});
-					}
-				})
-				
-				//fco Error en la consulta 
-				.fail(function(jqxhr, textStatus, error) {
-					var err = textStatus + ", " + error;
-					console.log( "Error Ajax: " + err );//fco para ver en la consola de la web 
-					swal({
-						type: 'error',
-						html: 'Error en la consulta<br>' + err
-					});
-				})
-*/
-
 
 		}
 
@@ -2353,6 +2321,60 @@ async	function NuevoCliente(){
 				})
 			}
 		}	
+
+		function MostrarCliente2(){ //fco esta funcion esta relacionada a consultar clientes cuando se crea una nueva orden 
+			//fco ajax consultar datos!!!
+			result = $('#BuscarCliente').val();
+      $('#Resultado > *').remove();
+ 
+      var buscando = '<div class="progress"> <div class="progress-bar progress-bar-striped active opacity-75" role="progressbar" style="width:100%">Buscando... <span id="contador"></span> </div> </div>'
+
+      $('#Resultado').append(buscando);
+
+			if (result == ''){
+				$('#Resultado > *').remove();
+			}else {	
+        var sucu = localStorage.sucursal;
+        sucu = sucu.toLowerCase();  
+
+				$.ajax( { method: "POST", url: "consulta.php", data : {CodigoCliente : result , funcion: 'ConsultarCliente2' , sucursal: sucu }, dataType: 'json'})
+				//fco exito en la consulta 
+				.done(function(rs) {
+					console.log( rs );//fco para ver en la consola de la web 
+					if (rs.length > 0 ){
+						var id = 0 , campo; //fco esta linea obtiene el nombre de los campos 
+						$('#Resultado > *').remove(); //fco vacia el body de la tabla 
+            let html = `<ul class="list-group">`
+            rs.forEach( function ( item ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
+              html +=`<li class="list-group-item" data-codigo="${item.codigo}" data-nombre="${item.nombre}" data-telefono="${item.telefono}"  onclick="AsignarCliente2(this)" >${ item.codigo} - ${ item.documento} - ${ item.nombre}</li> \n`
+            });
+            html +=`</ul>`
+            console.log(html)
+            $('#Resultado').append(html);
+						if ( $('#BuscarCliente').val().length == 0 ){$('#Resultado > *').remove(); } //fco para prevenir que no quede nada colgado
+					}	
+					else{ //fco no existen registros !!!
+						$('#Resultado > *').remove();
+            $( "#help1" ).text( "No existen registros !!!" ).show().fadeOut( 4000 );
+            $("#BuscarCliente").focus();
+					}
+          
+				})
+				//fco Error en la consulta 
+				.fail(function(jqxhr, textStatus, error) {
+          
+          $('#Resultado > *').remove();
+					var err = textStatus + ", " + error;
+					console.log( "Error Ajax: " + err );//fco para ver en la consola de la web 
+					swal({
+						type: 'error',
+						html: 'Error en la consulta Ajax <br>' + err
+					});
+				})
+			}
+		}	
+
+
 
     function ConsultarCliente2(){
 

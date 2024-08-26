@@ -137,34 +137,7 @@ $env = parse_ini_file('.env');
 		  die("Solicitud no válida.");
 		}
 		
-		//fco en esta consulta ulos campos deben ser iguales a las del form para que se pueda automatizar . 
-		//fco sql server toma la '' como ' en la consulta a tener en cuenta cuando se quiere trabajar con las comillas por en php uso " para que no se solapen.. 
-		//fco aqui ya armo el html para el retorno de la consulta de clientes para tener un codigo limpio en php y javascript
 		$consulta = 
-				// "
-				// 	select 
-				// 		'<div class=@panel-heading@  data-toggle=@collapse@ data-parent=@#accordion@ href=@.' || itemcode || '@ data-trigger=@focus@ >' ||
-				// 			'<span class=''glyphicon glyphicon-user''></span>&nbsp;' ||customer||' - '|| custmrName || 
-				// 		'</div>' ||
-				// 		'<div class=@panel-collapse collapse list-group-item-'|| CASE when 1 % 2 = 0 then 'danger ' else 'info ' end || itemcode || '@>' ||
-				// 			'<div class=@panel-body@ data-cliente=@' || customer || '@ id=@'|| itemCode ||'@ vin=@'|| vin ||'@ onclick=@AsignarCliente(this)@ > ' ||
-				// 				'<i class=@fa fa-car@ aria-hidden=@true@></i>&nbsp;&nbsp;' || itemCode || ' - ' || itemName || 
-				// 			'</div>' ||
-				// 		'</div>'	
-				// 	from ( 
-				// 			select 
-				// 				'' as customer2 
-				// 				, '' as customer 
-				// 				, '' as custmrName 
-				// 				, pro_chassis vin
-				// 				,pro_codigo as itemCode 
-				// 				, pro_descripcion_local as itemName 
-				// 			from productos
-				// 			where rub_codigo = 5
-				// 			and pro_chassis like '%$CodigoCliente%'
-				// 		)Tabla1 
-				// ";
-
 				"
 					select 
 						'' as customer2 
@@ -191,34 +164,37 @@ $env = parse_ini_file('.env');
 		}	
 		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
 
-
-	} elseif($funcion == 'ConsultarCliente2'){
+	} elseif ($funcion == 'ConsultarCliente2') {
 
 		if( isset($_POST['CodigoCliente']) ) {
 		  $CodigoCliente = $_POST['CodigoCliente'];
 		} else {
 		  die("Solicitud no válida.");
 		}
+		
+		$consulta = 
+				"
+					select 
+					cli_codigo codigo , 
+					cli_nombres nombre , 
+					cli_telefono telefono, 
+					cli_ruc documento
+					from clientes
+					where cli_nombres like '%$CodigoCliente%' or cli_ruc like '%$CodigoCliente%'
+				";
 
-		$consulta = "
-						select top 20 cardcode Codigo, cardname Nombre , isnull( phone1, '') Telefono1, isnull( address,'') Direccion, lictradnum Ruc , e_mail correo 
-						from ocrd with(nolock) where ( cardcode like '%$CodigoCliente%' or cardname like '%$CodigoCliente%' ) and Cardtype = 'C'
-					";
-
-		$rs = odbc_exec( $conexión, $consulta );
+		$rs = pg_query( $conexión2, $consulta );
 		if ( !$rs )
 		{
 			exit( "Error en la consulta SQL" );
 		}
 		//fco resultado de varios registros en json 
-		$valor = array();
-		while ( $row = odbc_fetch_array($rs) )
+		while ( $row = pg_fetch_array($rs) )
 		{
-			$valor[] = array_map('utf8_encode', $row);
-		} 
+			$valor[] = $row;
+		}	
 		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
-//		echo json_encode( $valor, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ); //fco esta linea codifica para ser leido como json 
-		//odbc_close ( $conexion ); 
+
 
 	} elseif($funcion == 'ConsultarTurnos'){
 		//fco para consultar turnos 
