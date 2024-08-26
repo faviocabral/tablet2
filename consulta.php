@@ -40,25 +40,20 @@ $env = parse_ini_file('.env');
 		//fco en esta consulta los campos deben ser iguales a las del form para que se pueda automatizar . 
 		$consulta = "
 					SELECT 
-						U_NroOT NroOt
+							callid  NroOt
 						, callID NroOt2
 						, callID NroLlamada
 						, DocNum NroDocumento
 						, createDate FechaApertura 
-						, isnull( closeDate, '') FechaCierre 
-						, (select top 1 v.DocDate 
-							from  OINV v with(nolock), INV1 d 
-							where v.DocEntry = d.DocEntry 
-							and v.cardname not like '%garden%'
-							and v.u_liiv = 1 
-							and d.ItemCode = OSCL.itemCode ORDER BY V.DOCDATE ASC ) FechaVenta
+						, '' FechaCierre 
+						, '' FechaVenta
 						, status OtEstado 
 						, customer CodigoCliente 
 						, custmrName NombreCliente 
-						, (select top 1 address from ocrd with(nolock) where cardcode = oscl.customer ) Direccion
-						, (select top 1 isnull( phone1, '') + ' - ' + isnull( Phone2, '') + ' - ' + isnull( Cellular, '')  from ocrd with(nolock) where cardcode = oscl.customer ) Telefono
+						, '' Direccion
+						, ''  Telefono
 						, itemCode Chassis 
-						, internalSN NroSerie 
+						, '' NroSerie 
 						, manufSN NroSerie2 
 						, itemName Vehiculo 
 						, Street Chapa 
@@ -69,38 +64,25 @@ $env = parse_ini_file('.env');
 						, callType TipoLlamada  
 						,subject Motivo 
 						,descrption PedidoCliente 
-						,isnull(resolution, '') Observacion
-						,(select t2.Name from oitm t1 with(nolock), [@COLOR]  t2 where ItemCode = oscl.itemcode and t1.U_Color = t2.Code ) Color
-						,(	
-							select t2.Name marca 
-							from OITM t1 with(nolock), [@MARCAS] t2 , [@MODELOS] t3 
-							where t1.U_Marca = t2.Code 
-							and t1.U_Modelo = t3.Code
-							and itemcode = oscl.itemCode
-						)Marca 
+						,COALESCE(resolution, '') Observacion
+						,'' Color
+						,''Marca 
 						, itemName Modelo
-						,(	
-							select t3.Name modelo
-							from OITM t1 with(nolock), [@MARCAS] t2 , [@MODELOS] t3 
-							where t1.U_Marca = t2.Code 
-							and t1.U_Modelo = t3.Code
-							and itemcode = oscl.itemCode
-						)Modelo2
-						,(select U_NAME from ousr with(nolock) where oscl.ASSIGNEE = USERID ) Asesor
-						,(select U_NAME + ' - ' + isnull( MobileIMEI, '' ) from ousr where oscl.ASSIGNEE = USERID ) Asesor2, 
-						isnull( Observaciones, '') Observaciones, 
-						isnull( Detalle_vehiculo, '') as DetalleVehiculo , 
-						'Accesorios: ' + isnull( Accesorios, '') +' - Observaciones: '+ isnull(Observaciones, '') Accesorios, 
-						isnull( Combustible, 0) Combustible, 
-						isnull( contacto_cliente, '') as contacto_cliente, 
-						replace( left( convert( varchar(100), t1.fecha_promesa ,121 ),16), '-', '/') as FechaPrometida, 
+						,'' Modelo2
+						,nombreasesor Asesor
+						,nombreasesor Asesor2, 
+						COALESCE( Observaciones, '') Observaciones, 
+						COALESCE( Detalle_vehiculo, '') as DetalleVehiculo , 
+						'' Accesorios, 
+						COALESCE( Combustible, 0) Combustible, 
+						COALESCE( contacto_cliente, '') as contacto_cliente, 
+						'' FechaPrometida, 
 						t1.sucursal sucursal ,
 						t1.campanha campanha , 
-						--isnull( t1.email, '') as contacto_email 
-						isnull((select E_Mail from OCRD with(nolock)  where CardCode = oscl.customer), t1.email ) as contacto_email , 
+						'' contacto_email , 
 						t1.lavado,
 						t1.costoServicio
-					FROM OSCL with(nolock) left outer join control.dbo.ot_tablet T1 with(nolock) on OSCL.callID = t1.ot 
+					FROM OSCL left outer join ot_tablet T1 on OSCL.callID = t1.ot 
 					WHERE ( callID = $NroOt ) 
 				";
 		$rs = odbc_exec( $conexión, $consulta );
