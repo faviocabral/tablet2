@@ -206,8 +206,8 @@ $env = parse_ini_file('.env');
 		  $array = array(); 
 		  parse_str($datos, $array); 
 
-		  echo json_encode($array);
-/*
+		  //echo json_encode($array);
+
 		  $customer = $array['CodigoCliente'];
 		  $customerName = $array['NombreCliente'];
 		  $itemCode = $array['Chassis'];
@@ -231,7 +231,9 @@ $env = parse_ini_file('.env');
 				  select * from oscl order by callid desc limit 1 ;
 
 				  ";
-  
+
+		echo $consulta;
+  /*
 		  $rs = pg_query( $conexión, $consulta );
 		  if ( !$rs )
 		  {
