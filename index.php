@@ -3042,7 +3042,7 @@ async	function NuevoCliente(){
               console.log(rs);
                 //GuardarImagen2(rs); //guardar la imagen del combustible ... 
                 //ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
-                RecuperarOt(rs); 
+                RecuperarOt(rs[0]['callid']); 
             })
             .fail(function(jqxhr, textStatus, error) {
               swal({ 
