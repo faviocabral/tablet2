@@ -106,9 +106,8 @@
 
 		$array = array(); 
 		parse_str($datos, $array); 
-		//print_r($array); 
-		$callid = $_POST['ot'];
 
+		$callid = $_POST['ot'];
 			$Accesorios  = $array['Observacion']; 
 			$Observacion = $array['Observacion2']; 
 			$Combustible = $array['Combustible']; 

@@ -2031,7 +2031,7 @@ async	function NuevoCliente(){
 
 		function AsignarCliente2(el){
         var sucu = localStorage.sucursal;
-        $("#CodigoCliente").val($(el).attr('data-codigo'))
+        $("#CodigoCliente").val($(el).attr('data-documento'))
         $("#NombreCliente").val($(el).attr('data-nombre'))
         $("#Telefono").val($(el).attr('data-telefono'))
         sucu = sucu.toLowerCase(); 
@@ -2046,7 +2046,7 @@ async	function NuevoCliente(){
         var chassis = $(el).attr('id'); 
         var cliente = $(el).attr('data-cliente'); 
         var sucu = localStorage.sucursal;
-        $("#Chassis").val($(el).attr('data-codigo'))
+        $("#Chassis").val($(el).attr('data-vin'))
         $("#NroSerie").val($(el).attr('data-vin'))
         $("#NroSerie2").val($(el).attr('data-vin'))
         $("#Vehiculo").val($(el).attr('data-vehiculo'))
@@ -2346,7 +2346,7 @@ async	function NuevoCliente(){
 						$('#Resultado > *').remove(); //fco vacia el body de la tabla 
             let html = `<ul class="list-group">`
             rs.forEach( function ( item ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-              html +=`<li class="list-group-item" data-codigo="${item.codigo}" data-nombre="${item.nombre}" data-telefono="${item.telefono}"  onclick="AsignarCliente2(this)" >${ item.codigo} - ${ item.documento} - ${ item.nombre}</li> \n`
+              html +=`<li class="list-group-item" data-codigo="${item.codigo}" data-documento="${item.documento}" data-nombre="${item.nombre}" data-telefono="${item.telefono}"  onclick="AsignarCliente2(this)" >${ item.codigo} - ${ item.documento} - ${ item.nombre}</li> \n`
             });
             html +=`</ul>`
             console.log(html)
@@ -3024,129 +3024,18 @@ async	function NuevoCliente(){
         var serieDoc , sucuCod, entidad;
 
           //para asignar serie y sucursal 
-          if(sucu == 'alider' ){//fca 
-            serieDoc  = 718;
-            sucuCod   = 'ALIDER';
-            entidad   = 'gasa';
-          }else if(sucu == 'abay-fca' ) {//mpy
-            serieDoc  = 718;
-            sucuCod   = 'AVAY';
-            entidad   = 'gasa';
-          }else if(sucu == 'mpy' ) {//mpy
-            serieDoc  = 17;
-            sucuCod   = 'ALIDER';
-            entidad   = 'mpy';
-          }else if( sucu == 'abay-mpy') {//mpy
-            serieDoc  = 17;
-            sucuCod   = 'AVAY';
-            entidad   = 'mpy';
-          }else if(sucu == 'victoria' ){//kia la victoria 
-            serieDoc = 715;
-            sucuCod  = 'VICTORIA';
-            entidad   = 'gasa';
-          }else if(sucu == 'abay-kia'){//kia la victoria 
-            serieDoc = 715;
-            sucuCod  = 'AVAY';
-            entidad   = 'gasa';
-          }else if(sucu == 'mra kia'){//kia la victoria 
-            serieDoc = 715;
-            sucuCod  = 'MRA KIA';
-            entidad   = 'gasa';
-          }else if(sucu == 'mra fca'){//MRA FCA 
-            serieDoc = 718;
-            sucuCod  = 'MRA FCA';
-            entidad   = 'gasa';
-          }else if(sucu == 'mra mpy'){//MRA MPY
-            serieDoc = 17;
-            sucuCod  = 'MRA MPY';
-            entidad   = 'mpy';
-          }else if(sucu == 'choferes'){//kia choferes 
-            serieDoc = 715;
-            sucuCod  = 'CHOFERES';
-            entidad   = 'gasa';
-          }else if(sucu == 'mini-moto'){//kia choferes 
-            serieDoc = 718;	//734;
-            sucuCod  = 'Mini-moto';
-            entidad   = 'gasa';
-          }else if(sucu == 'abay-moto'){//kia choferes 
-            serieDoc = 718;	//734;
-            sucuCod  = 'AVAY';
-            entidad   = 'gasa';
-          }else if(sucu == '003'){//nissan fdo  
-            serieDoc = 7;
-            sucuCod  = '003';
-            entidad   = 'nissan';
-          }else if(sucu == '002'){//nissan fdo  
-            serieDoc = 7;
-            sucuCod  = '002';
-            entidad   = 'nissan';
-          }else if(sucu == '004'){//nissan fdo  
-            serieDoc = 1;
-            sucuCod  = '004';
-            entidad   = 'nissan';
-          }else if(sucu == '005' ){//nissan fdo  
-            serieDoc = 7;
-            sucuCod  = '005';
-            entidad   = 'nissan';
-          }else if(sucu == '016' || sucu == 'abay-nissan' ){//nissan fdo  
-            serieDoc = 7;
-            sucuCod  = '016';
-            entidad   = 'nissan';
-          }else if(sucu == '001'){//nissan fdo  
-            serieDoc = 7;
-            sucuCod  = '001';
-            entidad   = 'nissan';
-          }else if(sucu == 'cde'){//nissan fdo  
-            serieDoc = 4;
-            sucuCod  = 'GARDEN';
-            entidad   = 'cde';
+          if(sucu == 'servicio' ){//fca 
+            serieDoc  = 1;
+            sucuCod   = '1';
+            entidad   = 'changan';
+          }else if(sucu == 'cde' ) {//mpy
+            serieDoc  = 1;
+            sucuCod   = '';
+            entidad   = '';
           }
 
-          var sap = {
-              "fields": {
-                "Status": $("#OtEstado").val(),
-                "CustomerCode": $("#CodigoCliente").val(),
-                "CustomerName": $("#NombreCliente").val(),
-                "ItemCode": $("#Chassis").val(),
-                "InternalSerialNum": $("#NroSerie").val(),
-                "ManufacturerSerialNum": $("#NroSerie2").val(),
-                "ItemDescription": $("#Vehiculo").val(),
-                "Street": $("#Chapa").val(),
-                "Room": $("#Identificador").val(),
-                "Subject": $("#Motivo").val().toUpperCase(),
-                "Description": $("#PedidoCliente").val().toUpperCase(),
-                "Series": serieDoc,
-                "AssigneeCode": $('#Asesor').attr('codigo'),
-                "Location": "-1",
-                "CallType": $("#TipoLlamada").val()
-
-              },
-              "userFields": {
-                "U_KmEntrada": $("#Kilometraje").val(),
-                "U_KmSalida": "0",
-                "U_Tipo": $("#TipoServicio").val(),
-                "U_NroOT": "0",
-                "U_Sucursal": sucuCod
-              }
-            }  
-
           if(evento == 1 ){
-            console.log(sap);
-            var datos = JSON.stringify(sap);
-            console.log(datos);
-            let origen = (window.origin.includes('crm')? window.origin + '/sap-api/' : 'http://192.168.10.80:3011/')
-            if( window.origin.includes('ngrok')  || window.origin.includes('slow-bugs')){ origen = 'https://0d4a-190-104-135-223.ngrok-free.app/' }
-            var url = origen+entidad+'/sap/191'; 
-            fetch(url, {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-              },
-              body: datos
-            })
-            .then(res => res.json())
-            .then(res => {
+
               console.log(res.status);
               console.log(res);
               if(res.status == 'error'){
@@ -3157,21 +3046,19 @@ async	function NuevoCliente(){
                     }); 
                 return;
               }else{
-                var origen = (window.origin.includes('crm') || window.origin.includes('ngrok') ? window.origin + '/tablet-app/insertar2.php' : window.origin +"/insertar2.php")
-                $.ajax( { method: "POST", url: origen, data : {data : result , funcion: abm , sucursal : sucu , ot: res.data }, dataType: 'html'})
+                $.ajax( { method: "POST", url: origen, data : {datos : result , funcion: 'insertarOrden' , sucursal : sucu , ot: res.data }, dataType: 'html'})
                 .done(function(rs) {
                   console.log('paso por control... ');
                   console.log(rs);
-                    RecuperarOt(rs); 
                     GuardarImagen2(rs); //guardar la imagen del combustible ... 
-                    ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
+                    //ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
                     RecuperarOt(rs); 
                 })
                 .fail(function(jqxhr, textStatus, error) {
                   console.log(error);
                 });
               }
-            });
+
 
           }else{ //para actualizar la ot 
             // solo los campos de comentarios y pedido cliente actualiza  , agregar aqui el campo que se quiera actualizar.

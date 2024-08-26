@@ -196,6 +196,52 @@ $env = parse_ini_file('.env');
 		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
 
 
+	} elseif($funcion == 'insertarOrden'){
+
+		if( isset($_POST['datos']) ) {
+			$datos = $_POST['datos'];
+		  } else {
+			die("Solicitud no válida.");
+		  }
+		  $array = array(); 
+		  parse_str($datos, $array); 
+
+		  $customer = $array['CodigoCliente'];
+		  $customerName = $array['NombreCliente'];
+		  $itemCode = $array['Chassis'];
+		  $itemName = $array['vehiculo'];
+		  $street = $array['Chapa'];
+		  $status = $array['OtEstado'];
+		  $assignee = $array['Asesor'];
+		  $nombreAsesor = $array['NombreAsesor'];
+		  $u_kmEntrada = $array['Kilometraje'];
+		  $u_tipo = $array['TipoServicio'];
+		  $calltype = $array['TipoLlamada'];
+		  $description = $array['PedidoCliente'];
+		  $subject = $array['Motivo'];
+		  $room = $array['Identificador'];
+			
+		  $consulta = 
+				  "
+				  insert into oscl (customer , customerName , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , dscription , subject, room )
+				  values ( '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room');
+
+				  select * from oscl order by callid desc limit 1 ;
+
+				  ";
+  
+		  $rs = pg_query( $conexión, $consulta );
+		  if ( !$rs )
+		  {
+			  exit( "Error en la consulta SQL" );
+		  }
+		  //fco resultado de varios registros en json 
+		  while ( $row = pg_fetch_array($rs) )
+		  {
+			  $valor[] = $row;
+		  }	
+		  echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
+
 	} elseif($funcion == 'ConsultarTurnos'){
 		//fco para consultar turnos 
 		//conexion directa //esto hay que llevar a una libreria para mas adelante... y hacer el include... 
