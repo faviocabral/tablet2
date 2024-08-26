@@ -3035,7 +3035,7 @@ async	function NuevoCliente(){
           }
 
           if(evento == 1 ){
-
+            alert(result)
             $.ajax( { method: "POST", url: 'consulta.php', data : {datos : result , funcion: 'insertarOrden' , sucursal : sucu  }, dataType: 'html'})
             .done(function(rs) {
               console.log('paso por control... ');
