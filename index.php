@@ -1285,10 +1285,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }
 
             console.log(rs.length); 
-            let datos = Object.entries(rs[0])
+            let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
             console.log('datos filtrados... ', datos)
-            datos.filter(item=> /[a-zA-Z]/.test(item[0])) 
-            .forEach(item=>{ 
+            datos.forEach(item=>{ 
               console.log(item[0], item[1])
               $("#"+item[0]).val(item[1]) 
             })
