@@ -205,8 +205,7 @@ $env = parse_ini_file('.env');
 		  }
 		  $array = array(); 
 		  parse_str($datos, $array); 
-
-		  //echo json_encode($array);
+		  echo json_encode($array);
 
 		  $customer = $array['CodigoCliente'];
 		  $customerName = $array['NombreCliente'];
