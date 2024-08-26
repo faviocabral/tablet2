@@ -3036,29 +3036,23 @@ async	function NuevoCliente(){
 
           if(evento == 1 ){
 
-              console.log(res.status);
-              console.log(res);
-              if(res.status == 'error'){
-                swal({ 
-                      type: 'error', 
-                        title: 'Atencion', 
-                        html: res.message 
-                    }); 
-                return;
-              }else{
-                $.ajax( { method: "POST", url: origen, data : {datos : result , funcion: 'insertarOrden' , sucursal : sucu , ot: res.data }, dataType: 'html'})
-                .done(function(rs) {
-                  console.log('paso por control... ');
-                  console.log(rs);
-                    GuardarImagen2(rs); //guardar la imagen del combustible ... 
-                    //ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
-                    RecuperarOt(rs); 
-                })
-                .fail(function(jqxhr, textStatus, error) {
-                  console.log(error);
-                });
-              }
-
+            $.ajax( { method: "POST", url: origen, data : {datos : result , funcion: 'insertarOrden' , sucursal : sucu  }, dataType: 'html'})
+            .done(function(rs) {
+              console.log('paso por control... ');
+              console.log(rs);
+                GuardarImagen2(rs); //guardar la imagen del combustible ... 
+                //ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
+                RecuperarOt(rs); 
+            })
+            .fail(function(jqxhr, textStatus, error) {
+              swal({ 
+                  type: 'error', 
+                    title: 'Atencion', 
+                    html: res.message 
+                }); 
+              return;
+              console.log(error);
+            });
 
           }else{ //para actualizar la ot 
             // solo los campos de comentarios y pedido cliente actualiza  , agregar aqui el campo que se quiera actualizar.
