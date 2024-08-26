@@ -180,7 +180,7 @@ $env = parse_ini_file('.env');
 					cli_telefono telefono, 
 					cli_ruc documento
 					from clientes
-					where cli_nombres like '%$CodigoCliente%' or cli_ruc like '%$CodigoCliente%'
+					where lower(cli_nombres) like lower('%$CodigoCliente%') or cli_ruc like '%$CodigoCliente%'
 				";
 
 		$rs = pg_query( $conexión2, $consulta );
