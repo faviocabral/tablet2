@@ -2012,10 +2012,11 @@ async	function NuevoCliente(){
         var chassis = $(el).attr('id'); 
         var cliente = $(el).attr('data-cliente'); 
         var sucu = localStorage.sucursal;
-        $("#chassis").val($(el).attr('data-codigo'))
+        $("#Chassis").val($(el).attr('data-codigo'))
         $("#NroSerie").val($(el).attr('data-vin'))
         $("#NroSerie2").val($(el).attr('data-vin'))
         $("#Vehiculo").val($(el).attr('data-vehiculo'))
+        $("#Chapa").val($(el).attr('data-chapa'))
         sucu = sucu.toLowerCase(); 
         swal({
 							type: 'success' ,
@@ -2325,7 +2326,7 @@ async	function NuevoCliente(){
 						$('#Resultado > *').remove(); //fco vacia el body de la tabla 
             let html = `<ul class="list-group">`
             rs.forEach( function ( item ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-              html +=`<li class="list-group-item" data-codigo="${item.itemcode}" data-vin="${item.vin}" data-vehiculo="${item.itemname}" onclick="AsignarCliente(this)" >${ item.itemcode} - ${ item.vin} - ${ item.itemname}</li> \n`
+              html +=`<li class="list-group-item" data-codigo="${item.itemcode}" data-vin="${item.vin}" data-chapa="${item.chapa}" data-vehiculo="${item.itemname}" onclick="AsignarCliente(this)" >${ item.itemcode} - ${ item.vin} - ${ item.itemname}</li> \n`
             });
             html +=`</ul>`
             console.log(html)

@@ -173,6 +173,7 @@ $env = parse_ini_file('.env');
 						, pro_chassis vin
 						,pro_codigo as itemCode 
 						, pro_descripcion_local as itemName 
+						, pro_chapa_definitiva chapa
 					from productos
 					where rub_codigo = 5
 					and pro_chassis like '%$CodigoCliente%'
