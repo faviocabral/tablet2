@@ -85,21 +85,18 @@ $env = parse_ini_file('.env');
 					FROM OSCL left outer join ot_tablet T1 on OSCL.callID = t1.ot 
 					WHERE ( callID = $NroOt ) 
 				";
-		$rs = odbc_exec( $conexión, $consulta );
-		if ( !$rs )
-		{
-			exit( "Error en la consulta SQL" );
-		}
+			$rs = pg_query( $conexión, $consulta );
+			if ( !$rs )
+			{
+				exit( "Error en la consulta SQL" );
+			}
+			//fco resultado de varios registros en json 
+			while ( $row = pg_fetch_array($rs) )
+			{
+				$valor[] = $row;
+			}	
+			echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
 
-		$valor = array();
-		while ( $row = odbc_fetch_array($rs) )
-		{
-			$valor[] =  array_map('utf8_encode', $row);
-		}
-		echo json_encode( $valor);
-
-		//echo json_encode( odbc_fetch_array($rs), JSON_UNESCAPED_UNICODE ); //fco esta linea codifica para ser leido como json solo una linea
-		////odbc_close ( $conexion );		
 
 	} elseif ($funcion == 'insertarCliente') {
 		$nombre = $_POST["Nombre"];
