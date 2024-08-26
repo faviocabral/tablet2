@@ -206,6 +206,8 @@ $env = parse_ini_file('.env');
 		  $array = array(); 
 		  parse_str($datos, $array); 
 
+		  echo $datos;
+/*
 		  $customer = $array['CodigoCliente'];
 		  $customerName = $array['NombreCliente'];
 		  $itemCode = $array['Chassis'];
@@ -241,6 +243,9 @@ $env = parse_ini_file('.env');
 			  $valor[] = $row;
 		  }	
 		  echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
+
+		  */
+
 
 	} elseif($funcion == 'ConsultarTurnos'){
 		//fco para consultar turnos 
