@@ -3105,14 +3105,15 @@ async	function NuevoCliente(){
           console.log( rs );//fco para ver en la consola de la web 
           if (rs ){ 
             //fco consulta automatizada se debe poner el mismo nombre del form como los campos del sql para que funcione auto 
-            rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-              var callid = Object.keys(rs2), id = 0 , campo; //fco captura los nombres de los campos 
-              Object.keys(rs2).forEach(function(key) {  //fco recorre los campos con sus valores 
-                campo = "#" + callid[id] , id++; //fco esta linea es para asignar automaticamente con el campo del form -> $(#campo).val(rs2[key]) //este apartado asigna al form 
-                $(campo).val(rs2[key]);
-              }); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
-              id = 0;
-            });
+
+            let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
+            console.log(rs.length); 
+            let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
+            console.log('datos filtrados... ', datos)
+            datos.forEach(item=>{ 
+              $("#"+ dom.find(x => x?.toLowerCase() === item[0])).val(item[1]) 
+            })
+
             //fco mensaje de exito 
             swal({ 
               type: 'success', 
