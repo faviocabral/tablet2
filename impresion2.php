@@ -450,9 +450,11 @@
 				console.log('datos para insertar... ', dom)
 				let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
 				console.log('datos para insertar... ', datos)
+				let campo = ''
 				datos.forEach(item=>{ 
-					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]) , item[1] )
-					$("#"+ dom.find(x => x.toLowerCase() === item[0])).val(item[1]) 
+					campo = "#"+ dom.find(x => x.toLowerCase() === item[0]) || ''
+					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]) , item[1] , campo  )
+					$(campo).val(item[1]) 
 				})
 
 			} 
