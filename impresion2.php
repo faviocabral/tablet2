@@ -447,9 +447,8 @@
 					id = 0; 
 				}); 
 
-
 			let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
-            console.log(rs.length); 
+            console.log(dom); 
             let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
             console.log('datos filtrados... ', datos)
             datos.forEach(item=>{ 
