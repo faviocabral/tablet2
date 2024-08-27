@@ -1289,7 +1289,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
             console.log('datos filtrados... ', datos)
             datos.forEach(item=>{ 
-              console.log(item[0], item[1])
               $("#"+ dom.find(x => x.toLowerCase() === item[0])).val(item[1]) 
             })
 
@@ -3729,16 +3728,10 @@ makeblob = function (dataURL) {
               showCancelButton: true
             });
 
-        }else if(sucursal == 'mini-moto'){
-          window.open( window.origin + '/impresion6.php?NroOt=' + nroOt, '_blank'); 
-        }else if(sucursal == 'mpy' || sucursal == 'mra mpy' || sucursal == 'abay-mpy'){
-          window.open( window.origin + '/impresion4.php?NroOt=' + nroOt, '_blank'); 
-        }else if(sucursal == '001' || sucursal == '002' || sucursal == '003' || sucursal == '004'|| sucursal == '005' || sucursal == 'abay-nissan'){
-          window.open(window.origin + '/impresion5.php?NroOt=' + nroOt, '_blank'); 
-        }else if(sucursal == 'cde' ){
-          window.open( window.origin + '/impresioncde.php?NroOt=' + nroOt, '_blank'); 
+        }else if(sucursal == '1'){
+          window.open( 'http://172.16.16.85:8080/tablet2/impresion6.php?NroOt=' + nroOt, '_blank'); 
         }else {
-            window.open( window.origin + '/impresion2.php?NroOt=' + nroOt + '&sucursal=' + sucursal , '_blank'); 
+            window.open( 'http://172.16.16.85:8080/tablet2/impresion2.php?NroOt=' + nroOt + '&sucursal=' + sucursal , '_blank'); 
         }
       }  
 
@@ -3983,7 +3976,7 @@ makeblob = function (dataURL) {
       var sucu = localStorage.sucursal; 
       //fco ajax consultar datos!!!
       console.log(sucu);
-      $.ajax( { method: "POST", url: "http://localhost:8080/tablet2/consulta.php", data : { funcion: 'Asesor' , sucursal : sucu }, dataType: 'json'})
+      $.ajax( { method: "POST", url: "http://172.16.16.85:8080/tablet2/consulta.php", data : { funcion: 'Asesor' , sucursal : sucu }, dataType: 'json'})
       .done(function(rs){
         if(rs){
           var my_html = '<ul class="list-group">\n' , my_codigo, my_asesor; 
