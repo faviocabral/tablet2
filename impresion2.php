@@ -454,7 +454,7 @@
 				datos.forEach(item=>{ 
 					campo = "#"+ dom.find(x => x.toLowerCase() === item[0]) || ''
 					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]) , item[1] , campo  )
-					$(campo).val(item[1]) 
+					$(campo).text(item[1]) 
 				})
 
 			} 
