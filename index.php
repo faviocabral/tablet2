@@ -3102,7 +3102,7 @@ async	function NuevoCliente(){
 
         //fco exito en la consulta 
         .done(function(rs) { 
-          console.log( rs );//fco para ver en la consola de la web 
+          console.log('recuperando datos... ', rs );//fco para ver en la consola de la web 
           if (rs ){ 
             //fco consulta automatizada se debe poner el mismo nombre del form como los campos del sql para que funcione auto 
 
