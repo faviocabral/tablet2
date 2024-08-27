@@ -365,86 +365,87 @@
 					return ;
 				}
 				var valor ;
-				rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-					var callid = Object.keys(rs2), id = 0 , campo , campo2 ; //fco captura los nombres de los campos 
-					Object.keys(rs2).forEach(function(key) { //fco recorre los campos con sus valores 
-						campo = "#" + callid[id]; 
-						campo2 = "." + callid[id]; 
-						id++;
-						valor = rs2[key]; 
-						//console.log(campo);
-						if (key == 'FechaApertura' ){ 
-							valor = valor.substr(0, 10); 
-						} else if (key == 'FechaVenta' ){ 
-							valor = valor.substr(0, 10); 
-						} else if (key == 'FechaCierre' ){ 
-							valor = valor.substr(0, 10); 
-						} else if (key == 'CodigoCliente' && ( valor.indexOf('C') == 0 || valor.indexOf('c') == 0 ) ){ 
-							valor = valor.substr(1, 50); 
-						} else if (key == 'TipoServicio' ){ 
-							if(valor == 1){ 
-								valor = 'CARGO CLIENTE';
-							}else if(valor == 2){ 
-								valor = 'PRE-ENTREGA';
-							}else if(valor == 3){ 
-								valor = 'GARANTIA';
-							}else if(valor == 4){ 
-								valor = 'REP USADO VTA';
-							}else if(valor == 5){ 
-								valor = 'PROMOCION';
-							}else if(valor == 6){ 
-								valor = 'USO TALLER/GARDEN';//192.168.10.54/tablet/imagenes/309796.png
-							}else if(valor == 7){ 
-								valor = 'SERVICE EN CASA';
-							} 
-						} else if (key == 'TipoLlamada'){
+				// rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
+				// 	var callid = Object.keys(rs2), id = 0 , campo , campo2 ; //fco captura los nombres de los campos 
+				// 	Object.keys(rs2).forEach(function(key) { //fco recorre los campos con sus valores 
+				// 		campo = "#" + callid[id]; 
+				// 		campo2 = "." + callid[id]; 
+				// 		id++;
+				// 		valor = rs2[key]; 
+				// 		//console.log(campo);
+				// 		if (key == 'FechaApertura' ){ 
+				// 			valor = valor.substr(0, 10); 
+				// 		} else if (key == 'FechaVenta' ){ 
+				// 			valor = valor.substr(0, 10); 
+				// 		} else if (key == 'FechaCierre' ){ 
+				// 			valor = valor.substr(0, 10); 
+				// 		} else if (key == 'CodigoCliente' && ( valor.indexOf('C') == 0 || valor.indexOf('c') == 0 ) ){ 
+				// 			valor = valor.substr(1, 50); 
+				// 		} else if (key == 'TipoServicio' ){ 
+				// 			if(valor == 1){ 
+				// 				valor = 'CARGO CLIENTE';
+				// 			}else if(valor == 2){ 
+				// 				valor = 'PRE-ENTREGA';
+				// 			}else if(valor == 3){ 
+				// 				valor = 'GARANTIA';
+				// 			}else if(valor == 4){ 
+				// 				valor = 'REP USADO VTA';
+				// 			}else if(valor == 5){ 
+				// 				valor = 'PROMOCION';
+				// 			}else if(valor == 6){ 
+				// 				valor = 'USO TALLER/GARDEN';//192.168.10.54/tablet/imagenes/309796.png
+				// 			}else if(valor == 7){ 
+				// 				valor = 'SERVICE EN CASA';
+				// 			} 
+				// 		} else if (key == 'TipoLlamada'){
 
-							if(valor == 1){ 
-								valor = 'SERVICE EXPRESS';
-							}else if(valor == 2){ 
-								valor = 'REINGRESO/RECLAMO';
-							}else if(valor == 3){ 
-								valor = 'SERVICIO REPARACION';
-							}else if(valor == 4){ 
-								valor = 'REPARACIONES MAYORES';
-							}else if(valor == 5){ 
-								valor = 'CLIENTE EN ESPERA';
-							}else if(valor == 6){ 
-								valor = 'OTROS';//192.168.10.54/tablet/imagenes/309796.png
-							}else if(valor == 7){ 
-								valor = 'CAMPAÑA';
-							}else if(valor == 8){ 
-								valor = 'PRE-ENTREGA';
-							}else if(valor == 9){ 
-								valor = 'GARANTIA';
-							} 
+				// 			if(valor == 1){ 
+				// 				valor = 'SERVICE EXPRESS';
+				// 			}else if(valor == 2){ 
+				// 				valor = 'REINGRESO/RECLAMO';
+				// 			}else if(valor == 3){ 
+				// 				valor = 'SERVICIO REPARACION';
+				// 			}else if(valor == 4){ 
+				// 				valor = 'REPARACIONES MAYORES';
+				// 			}else if(valor == 5){ 
+				// 				valor = 'CLIENTE EN ESPERA';
+				// 			}else if(valor == 6){ 
+				// 				valor = 'OTROS';//192.168.10.54/tablet/imagenes/309796.png
+				// 			}else if(valor == 7){ 
+				// 				valor = 'CAMPAÑA';
+				// 			}else if(valor == 8){ 
+				// 				valor = 'PRE-ENTREGA';
+				// 			}else if(valor == 9){ 
+				// 				valor = 'GARANTIA';
+				// 			} 
 
 
-						if (key == 'Accesorios') {
-							var accesorio = rs2['Accesorios'];
-							var i = 0 ;
-							while( i <= accesorio.length ){
-							}
-						}
+				// 		if (key == 'Accesorios') {
+				// 			var accesorio = rs2['Accesorios'];
+				// 			var i = 0 ;
+				// 			while( i <= accesorio.length ){
+				// 			}
+				// 		}
 
-						if(rs2['lavado'] == 'SI'){
-							$("#lavadoSi").text('X')
-						}else if(rs2['lavado'] == 'NO'){
-							$("#lavadoNo").text('X')
-						}
+				// 		if(rs2['lavado'] == 'SI'){
+				// 			$("#lavadoSi").text('X')
+				// 		}else if(rs2['lavado'] == 'NO'){
+				// 			$("#lavadoNo").text('X')
+				// 		}
 
-						//copiar en todos 
-						} else if ( key == 'Chassis'){
-							// ConsultarMora(valor);
-							// Campaña(valor);
-							// ConsultarPlanPlus(valor);
-						}
+				// 		//copiar en todos 
+				// 		} else if ( key == 'Chassis'){
+				// 			// ConsultarMora(valor);
+				// 			// Campaña(valor);
+				// 			// ConsultarPlanPlus(valor);
+				// 		}
 
-						$(campo).html(valor); 
-						$(campo2).html(valor?.toUpperCase()); 
-					}); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
-					id = 0; 
-				}); 
+				// 		$(campo).html(valor); 
+				// 		$(campo2).html(valor?.toUpperCase()); 
+				// 	}); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
+				// 	id = 0; 
+				// }); 
+
 				let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
 				console.log('datos para insertar... ', dom)
 				let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
