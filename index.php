@@ -3092,6 +3092,7 @@ async	function NuevoCliente(){
 		}//fin funcion grabar
 
     function RecuperarOt(result){ 
+      alert(result)
       ResetForm();//fco refresca el form  
         //fco ajax consultar datos!!! 
         //marilina
