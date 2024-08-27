@@ -420,9 +420,6 @@
 								valor = 'GARANTIA';
 							} 
 
-						if ( rs2['sucursal'] == 'VICTORIA') {
-							$("#sucu-direccion").html('Avda. Fernando de la Mora y De la Victoria Tel: (021) 237-7095 <br> kiarecepcionservice@garden.com.py   Asuncion - Paraguay');
-						}
 
 						if (key == 'Accesorios') {
 							var accesorio = rs2['Accesorios'];
