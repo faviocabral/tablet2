@@ -446,13 +446,13 @@
 					id = 0; 
 				}); 
 
-			let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
-            console.log(dom); 
-            let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
-            console.log('datos filtrados... ', datos)
-            datos.forEach(item=>{ 
-              $("#"+ dom.find(x => x?.toLowerCase() === item[0])).val(item[1]) 
-            })
+				let dom = [...document.querySelectorAll('[id]')].map(item=>{ return {col1: item.id , col2: item.id.toLowerCase() } }) 
+				console.log(dom); 
+				let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
+				console.log('datos filtrados... ', datos)
+				datos.forEach(item=>{ 
+				$("#"+ dom.find(x => x.col2 === item[0]).col1 || '' ).val(item[1]) 
+				})
 
 			} 
 		})
