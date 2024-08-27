@@ -457,10 +457,8 @@
             let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
             console.log('datos filtrados... ', datos)
             datos.forEach(item=>{ 
-              $("#"+ dom.find(x => x.toLowerCase() === item[0])).val(item[1]) 
+              $("#"+ dom.find(x => x?.toLowerCase() === item[0])).val(item[1]) 
             })
-
-
 
 			} 
 		})
