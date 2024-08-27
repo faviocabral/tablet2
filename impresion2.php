@@ -425,7 +425,6 @@
 							var accesorio = rs2['Accesorios'];
 							var i = 0 ;
 							while( i <= accesorio.length ){
-								
 							}
 						}
 
@@ -449,7 +448,7 @@
 				}); 
 
 
-				let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
+			let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
             console.log(rs.length); 
             let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
             console.log('datos filtrados... ', datos)

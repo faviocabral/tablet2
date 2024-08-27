@@ -3098,7 +3098,7 @@ async	function NuevoCliente(){
         var sucu = localStorage.sucursal;
         sucu = sucu.toLowerCase(); 
 
-        $.ajax( { method: "POST", url: window.origin + "/consulta.php", data : { NroOt : result , funcion: 'ConsultarOt' , sucursal: sucu }, dataType: 'json'}) 
+        $.ajax( { method: "POST", url: "consulta.php", data : { NroOt : result , funcion: 'ConsultarOt' , sucursal: sucu }, dataType: 'json'}) 
 
         //fco exito en la consulta 
         .done(function(rs) { 
