@@ -1284,12 +1284,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               return ;
             }
 
+            let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
             console.log(rs.length); 
             let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
             console.log('datos filtrados... ', datos)
             datos.forEach(item=>{ 
               console.log(item[0], item[1])
-              $("#"+item[0]).val(item[1]) 
+              $("#"+ dom.find(x => String.toLowerCase(x) === item[0])).val(item[1]) 
             })
 
 						//fco mensaje de exito 
@@ -1300,11 +1301,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               var chassis = $("#Chassis").val();
               var chassis2 = $("#Chassis").val().slice(-17);
 
-              // consultarVinConProblemas(chassis)
-              // ConsultarMora(chassis);
-              // ConsultarPlanPlus(chassis);
-              // ConsultarPlanMini($("#Chassis").val());
-              // Campaña(chassis2);
             });
 
             if(rs[0]['lavado'] == 'SI'){
