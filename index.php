@@ -3715,37 +3715,8 @@ makeblob = function (dataURL) {
 
         var sucursal = localStorage.sucursal; 
         sucursal = sucursal.toLowerCase(); 
-        if ( sucursal == 'alider' ){ //solamente si es fca 
-           swal({
-              //type:'info',
-              title:'Seleccione Formato Impresion ',
-              html: '<div class="container-fluid">'+
-                      '<br>'+
-                      '<img src="logo-fca.jpg" onclick="imprimirFormato(1)"  class="img-thumbnail" alt="Formato FCA" width="200" height="120" style="margin-right:15px;"> '+
-                      '<img src="logo_mini.jpeg" onclick="imprimirFormato(2)" class="img-thumbnail" alt="Formato Mini" width="200" height="80"> '+
-                    '</div>', 
-              allowOutsideClick: false, 
-              showCloseButton: false, 
-              showConfirmButton: false, 
-              showCancelButton: true
-            });
-
-        }else if(sucursal == '1'){
-          window.open( 'http://172.16.16.85:8080/tablet2/impresion6.php?NroOt=' + nroOt, '_blank'); 
-        }else {
-            window.open( 'http://172.16.16.85:8080/tablet2/impresion2.php?NroOt=' + nroOt + '&sucursal=' + sucursal , '_blank'); 
-        }
+        window.open( 'http://172.16.16.85:8080/tablet2/impresion2.php?NroOt=' + nroOt + '&sucursal=' + sucursal , '_blank'); 
       }  
-
-      /*
-      swal({
-            timer:5000,
-            title:'Espere...',
-            html: '<span class="glyphicon glyphicon-cog" style=" animation: 2s rotate360 infinite linear; font-size:100px;"></span>',
-            showConfirmButton:false,
-            allowOutsideClick:false
-      });
-      */
 
       //swal().close();
       //Estatus(4);
