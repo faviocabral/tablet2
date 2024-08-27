@@ -1290,7 +1290,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             console.log('datos filtrados... ', datos)
             datos.forEach(item=>{ 
               console.log(item[0], item[1])
-              $("#"+ dom.find(x => String.toLowerCase(x) === item[0])).val(item[1]) 
+              $("#"+ dom.find(x => x.toLowerCase() === item[0])).val(item[1]) 
             })
 
 						//fco mensaje de exito 
