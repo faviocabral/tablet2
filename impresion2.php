@@ -350,13 +350,12 @@
 	$(document).ready(function(){
 
 		var NroOt = <?php echo $_GET["NroOt"]; ?> ;
-		alert( NroOt );	
 		var sucu = localStorage.getItem("sucursal") ;
 		if ( sucu !== "cde" ) { sucu = 'alider'}
 		$.ajax( { method: "POST", url: "consulta.php", data : { NroOt : NroOt , funcion: 'ConsultarOt', sucursal : sucu }, dataType: 'json'})
 		//fco exito en la consulta 
 		.done(function(rs) {
-			console.log( rs );//fco para ver en la consola de la web 
+			console.log('trae los datos para la impresion .. ', rs );//fco para ver en la consola de la web 
 			if (rs ){
 				if(rs.length ==0 ){
 					swal({
