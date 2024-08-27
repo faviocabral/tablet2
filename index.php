@@ -3032,11 +3032,11 @@ async	function NuevoCliente(){
             $.ajax( { method: "POST", url: 'consulta.php', data : {datos : result , funcion: 'insertarOrden' , sucursal : sucu  }, dataType: 'html'})
             .done(function(rs) {
               console.log('paso por control... ');
-              console.log(rs[0]);
+              var respuesta = JSON.parse(rs);
+              console.log(respuesta)
                 //GuardarImagen2(rs); //guardar la imagen del combustible ... 
                 //ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
-                alert(rs[0]['callid'])
-                RecuperarOt(rs[0]['callid']); 
+                RecuperarOt(respuesta[0]['callid']); 
             })
             .fail(function(jqxhr, textStatus, error) {
               swal({ 
