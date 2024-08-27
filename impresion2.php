@@ -449,7 +449,11 @@
 				let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
 				console.log('datos para insertar... ', dom)
 				let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
-				datos.forEach(item=>{ $("#"+ dom.find(x => x.toLowerCase() === item[0])).val(item[1]) })
+				console.log('datos para insertar... ', datos)
+				datos.forEach(item=>{ 
+					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]))
+					$("#"+ dom.find(x => x.toLowerCase() === item[0])).val(item[1]) 
+				})
 
 			} 
 		})
