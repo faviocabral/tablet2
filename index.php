@@ -3115,6 +3115,7 @@ async	function NuevoCliente(){
               $("#"+ dom.find(x => x?.toLowerCase() === item[0])).val(item[1]) 
             })
 
+
             //fco mensaje de exito 
             swal({ 
               type: 'success', 

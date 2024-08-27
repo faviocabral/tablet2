@@ -456,7 +456,6 @@
 					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]) , item[1] , campo  )
 					$(campo).text(item[1]) 
 				})
-
 			} 
 		})
       .fail(function(jqxhr, textStatus, error ){
