@@ -350,7 +350,7 @@
 	$(document).ready(function(){
 
 		var NroOt = <?php echo $_GET["NroOt"]; ?> ;
-		//alert( NroOt );	
+		alert( NroOt );	
 		var sucu = localStorage.getItem("sucursal") ;
 		if ( sucu !== "cde" ) { sucu = 'alider'}
 		$.ajax( { method: "POST", url: "consulta.php", data : { NroOt : NroOt , funcion: 'ConsultarOt', sucursal : sucu }, dataType: 'json'})
