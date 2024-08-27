@@ -75,9 +75,9 @@
             </div> 
         	<div class="col-xs-6 text-center"> 
             <br> 
-		  		<h2 style="margin:0px;">Garden Automotores S.A.</h2> 
-                <p style="font-size:10px;">Republica Argentina c/ Facundo Machain Tel.: (+595 21)237-7888 <br> 
-                recepcionservice@garden.com.py - Asuncion Paraguay </p> 
+		  		<h2 style="margin:0px;">Gorostiaga</h2> 
+                <p style="font-size:10px;">Direccion y telefono <br> 
+                correo - Asuncion Paraguay </p> 
                 
             </div> 
         	<div class="col-xs-3 text-right" style="padding-top: 10px;"> 
@@ -120,26 +120,26 @@
 		<td colspan="2"><strong>VEHICULO</strong></td> 
 	  </tr>
       <tr> 
-		<td style="width:5%;"><strong>Nombre:</strong> </td> <td style="width:40%; font-size: 12px;" id="NombreCliente">Juan Pueblo</td>   
-		<td style="width:2%;"><strong>Chassis:</strong> </td> <td style="width:40%; font-size: 12px;" id="Chassis">ABC123456</td> 
+		<td style="width:5%;"><strong>Nombre:</strong> </td> <td style="width:40%; font-size: 12px;" id="NombreCliente"></td>   
+		<td style="width:2%;"><strong>Chassis:</strong> </td> <td style="width:40%; font-size: 12px;" id="Chassis"></td> 
 	  </tr>
       <tr> 
-		<td><strong>Direccion:</strong> </td> <td id="Direccion" style=" font-size: 12px;">Rca Argentina c/Facundo Machain</td>   
-		<td><strong>Marca:</strong> </td> <td id="Marca" style=" font-size: 12px;">KIA   </td> 
+		<td><strong>Direccion:</strong> </td> <td id="Direccion" style=" font-size: 12px;"></td>   
+		<td><strong>Marca:</strong> </td> <td id="Marca" style=" font-size: 12px;">  </td> 
 	  </tr>
       <tr> 
-		<td><strong>Telefono: </strong> </td> <td id="Telefono" style=" font-size: 12px;">0981 123 123</td> 
-		<td><strong>Modelo:</strong>     </td> <td id="Modelo" style=" font-size: 12px;">KIA PICANTO </td> 
+		<td><strong>Telefono: </strong> </td> <td id="Telefono" style=" font-size: 12px;"></td> 
+		<td><strong>Modelo:</strong>     </td> <td id="Modelo" style=" font-size: 12px;"> </td> 
 	  </tr>
       <tr> 
-		<td><strong>Ruc / Ci: </strong> </td> <td id="CodigoCliente" style=" font-size: 12px;">3216541</td> 
+		<td><strong>Ruc / Ci: </strong> </td> <td id="CodigoCliente" style=" font-size: 12px;"></td> 
 		<td><strong>KM:</strong>    </td> <td id="" style=" font-size: 12px;"> Entrada: <span id='Kilometraje'></span>   -  Salida: <span id='KilometrajeSalida'></span>  </td> 
 	  </tr>
       <tr>
       	<td></td>
       	<td></td>
       	<td><strong>Chapa:</strong> </td>
-      	<td id="Chapa" style=" font-size: 12px;">ABC123 </td>
+      	<td id="Chapa" style=" font-size: 12px;"> </td>
       </tr>	
       <tr>
       	<td></td>
@@ -186,7 +186,7 @@
       <tr><td colspan="2" style="width:10%;"> </td></tr>
 
 	  <tr style="background-color:#eee !important;" class="text-center"> <td colspan="4"><strong> AUTORIZACION</strong></td></tr>
-	  <tr> <td colspan="4" style="width:20%; text-align: justify"> <p style="font-size:10px; margin:0px; position: relative;"><b>Autorización al Dpto. de Servicios de Garden Automotores S.A. a: </b>Realizar los trabajos apuntados más arriba mediante la provisión de los repuestos y materiales que sean necesarios. A las pruebas del vehículo fuera del taller en las calles y rutas para garantizar los trabajos realizados </br><b>Informamos al Cliente que: </b>La empresa tendrá derecho a cobrar 30.000 Gs. por día en concepto de estacionamiento y seguro a partir de las 24 horas de la fecha de notificación para el retiro del vehículo. La empresa no se responsabiliza por los objetos de valor dejados dentro del vehículo. Los datos proporcionados podrán ser utilizados en acciones de marketing, encuestas de calidad y llamadas de seguimiento. En caso de incumplimiento de pago por los servicios contratados, el presente instrumento se constituye en título ejecutivo, de conformidad a los artículos 439 y 448, inciso b) del C.P.C. De conformidad a lo establecido en el artículo 1.826 del Código Civil Paraguayo, Garden Automotores S.A. podrá ejercer derecho de retención del vehículo hasta el cobro íntegro del crédito exigido. En caso de haber arrendado un vehículo, conjuntamente con el pago de servicio del taller deberá ser abonado el costo del arrendamiento. </br><b>Retiro de Repuestos:</b> Las piezas sustituidas en las reparaciones estarán a disposición hasta el momento del retiro del vehículo. Yo cliente, manifiesto asumir responsabilidad respecto a su destino, disposición y uso comprometiéndome a dar cumplimiento a disposiciones legales y/o normativas que regulen la utilización de los mismos.</p>
+	  <tr> <td colspan="4" style="width:20%; text-align: justify"> <p style="font-size:10px; margin:0px; position: relative;"><b>Autorización al Dpto. de Servicios de Gorostiaga a: </b>Realizar los trabajos apuntados más arriba mediante la provisión de los repuestos y materiales que sean necesarios. A las pruebas del vehículo fuera del taller en las calles y rutas para garantizar los trabajos realizados </br><b>Informamos al Cliente que: </b>La empresa tendrá derecho a cobrar 30.000 Gs. por día en concepto de estacionamiento y seguro a partir de las 24 horas de la fecha de notificación para el retiro del vehículo. La empresa no se responsabiliza por los objetos de valor dejados dentro del vehículo. Los datos proporcionados podrán ser utilizados en acciones de marketing, encuestas de calidad y llamadas de seguimiento. En caso de incumplimiento de pago por los servicios contratados, el presente instrumento se constituye en título ejecutivo, de conformidad a los artículos 439 y 448, inciso b) del C.P.C. De conformidad a lo establecido en el artículo 1.826 del Código Civil Paraguayo, Gorostiaga podrá ejercer derecho de retención del vehículo hasta el cobro íntegro del crédito exigido. En caso de haber arrendado un vehículo, conjuntamente con el pago de servicio del taller deberá ser abonado el costo del arrendamiento. </br><b>Retiro de Repuestos:</b> Las piezas sustituidas en las reparaciones estarán a disposición hasta el momento del retiro del vehículo. Yo cliente, manifiesto asumir responsabilidad respecto a su destino, disposición y uso comprometiéndome a dar cumplimiento a disposiciones legales y/o normativas que regulen la utilización de los mismos.</p>
 		</td></tr>
 	
 	  <tr style="background-color:#eee !important;" class="text-center"> 
@@ -212,8 +212,8 @@
 	  <tr style="background-color:#eee !important;" class="text-center"> <td colspan="10"><strong> TICKET </strong></td> </tr>
       <tr class="text-center"  style="background-color:#eee !important;"> <td colspan="8" ><strong> CONFORMIDAD CLIENTE<strong></td> <td colspan="2"><strong>VEHICULO</strong></td> </tr>
       <tr> <td colspan="8" rowspan="2" style="width:60%;"> 
-				<strong><p style="margin-bottom:0px; text-align: center;"> Garden Automotores S.A.</p></strong> 
-				<p id="sucu-direccion" style="font-size:10px;margin-bottom:0px; text-align: center;">Republica Argentina c/ Facundo Machain Tel.: (+595 21)237-7888 <br> recepcionservice@garden.com.py - Asuncion Paraguay </p>
+				<strong><p style="margin-bottom:0px; text-align: center;"> Gorostiaga</p></strong> 
+				<p id="sucu-direccion" style="font-size:10px;margin-bottom:0px; text-align: center;">Direccion Telefono <br> Correo - Asuncion Paraguay </p>
 				<p style="margin-bottom:0px; float: clear;font-size: 11px;"><strong> Estimado Cliente</p></strong> 
 				<p style="font-size:9px;margin-bottom:0px;"> * Para mantener el turno en el taller el presupuesto debera ser aceptado entre las 48 hs. </p>
 				<p style="font-size:9px;margin-bottom:0px;"> * Horario de Atencion del Dpto. de Servicios de 07:30 a 18:00 hs de Lunes a Viernes Sabado de 07:30 a 12:00 hs. </p>
