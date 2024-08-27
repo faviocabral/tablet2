@@ -445,8 +445,8 @@
 					}); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
 					id = 0; 
 				}); 
-
 				let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
+				console.log('datos para insertar... ', dom)
 				let datos = Object.entries(rs[0]).filter(item=> /[a-zA-Z]/.test(item[0]) )
 				datos.forEach(item=>{ $("#"+ dom.find(x => x.toLowerCase() === item[0])).val(item[1]) })
 
