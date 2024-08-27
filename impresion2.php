@@ -440,9 +440,9 @@
 
 						//copiar en todos 
 						} else if ( key == 'Chassis'){
-							ConsultarMora(valor);
-							Campaña(valor);
-							ConsultarPlanPlus(valor);
+							// ConsultarMora(valor);
+							// Campaña(valor);
+							// ConsultarPlanPlus(valor);
 						}
 
 						$(campo).html(valor); 
