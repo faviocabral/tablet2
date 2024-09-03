@@ -3121,8 +3121,9 @@ async	function NuevoCliente(){
               title: 'Registro Grabado ', 
               html: '<h1>Nro: ' + $('#NroLlamada').val() + ' !!!</h1>' 
             }).then( async function() {
+/*              
               //solo caso de kia victoria 
-              if(sucu === 'victoria'){
+            if(sucu === 'victoria'){
                 localStorage.setItem('printer-asesor', 'si')
                 localStorage.setItem('printer-taller', 'si')
                 let grid = `
@@ -3203,6 +3204,7 @@ async	function NuevoCliente(){
                   }
                   swal.close()                      
                 })
+
             }else if( sucu === 'alider'){
               localStorage.setItem('copia-printer', 2)
               let grid = `
@@ -3271,6 +3273,9 @@ async	function NuevoCliente(){
             }else{
             ImprimirOt();
           }
+*/
+          ImprimirOt();
+
         }); 
 
             $("#PedidoCliente").height($('#PedidoCliente')[0].scrollHeight ); 
