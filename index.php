@@ -2616,7 +2616,6 @@ async	function NuevoCliente(){
       */
       var sucu = localStorage.sucursal; 
       sucu = sucu.toLowerCase(); 
-      alert(sucu)
       $.ajax( { method: "POST", url: "consulta.php", data : { funcion: 'SetTurnos', turno: id , sucursal:sucu }, dataType: 'html'})
       //fco exito en la consulta 
       .done(function(rs) {
