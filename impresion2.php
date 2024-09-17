@@ -75,10 +75,10 @@
             </div> 
         	<div class="col-xs-6 text-center"> 
             <br> 
-		  		<h2 style="margin:0px;">Gorostiaga</h2> 
+		  		<!-- <h2 style="margin:0px;">Gorostiaga</h2> -->
+				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="40%" height="40%">
                 <p style="font-size:10px;">Direccion y telefono <br> 
                 correo - Asuncion Paraguay </p> 
-                
             </div> 
         	<div class="col-xs-3 text-right" style="padding-top: 10px;"> 
 		  		<span > <?php echo date("Y-m-d H:i"); ?> </span>
@@ -167,8 +167,8 @@
 	  <tr style="background-color:#eee !important;"> <td colspan="2"><strong> DETALLE DEL SERVICIO</strong></td> <td colspan="1"><strong> COMBUSTIBLE</strong></td> <td colspan="1"><strong> DETALLE EXTERNO</strong></td></tr>
       <tr> 
 		<td colspan="2" style="width:10%;" id="list-accesorios">
-		<p><b>Ducha Cortesia: si(<span id='lavadoSi'>_</span>) no(<span id="lavadoNo">_</span>)</b></p>
-		<p><b>Precio Estimado del Servicio: <span id='costoServicio'>___________</span></b></p>
+		<!-- <p><b>Ducha Cortesia: si(<span id='lavadoSi'>_</span>) no(<span id="lavadoNo">_</span>)</b></p>
+		<p><b>Precio Estimado del Servicio: <span id='costoServicio'>___________</span></b></p> -->
 		</td>  
       		<td colspan="1" rowspan="6" style="width:20%;">
 				<center>
@@ -186,7 +186,24 @@
       <tr><td colspan="2" style="width:10%;"> </td></tr>
 
 	  <tr style="background-color:#eee !important;" class="text-center"> <td colspan="4"><strong> AUTORIZACION</strong></td></tr>
-	  <tr> <td colspan="4" style="width:20%; text-align: justify"> <p style="font-size:10px; margin:0px; position: relative;"><b>Autorización al Dpto. de Servicios de Gorostiaga a: </b>Realizar los trabajos apuntados más arriba mediante la provisión de los repuestos y materiales que sean necesarios. A las pruebas del vehículo fuera del taller en las calles y rutas para garantizar los trabajos realizados </br><b>Informamos al Cliente que: </b>La empresa tendrá derecho a cobrar 30.000 Gs. por día en concepto de estacionamiento y seguro a partir de las 24 horas de la fecha de notificación para el retiro del vehículo. La empresa no se responsabiliza por los objetos de valor dejados dentro del vehículo. Los datos proporcionados podrán ser utilizados en acciones de marketing, encuestas de calidad y llamadas de seguimiento. En caso de incumplimiento de pago por los servicios contratados, el presente instrumento se constituye en título ejecutivo, de conformidad a los artículos 439 y 448, inciso b) del C.P.C. De conformidad a lo establecido en el artículo 1.826 del Código Civil Paraguayo, Gorostiaga podrá ejercer derecho de retención del vehículo hasta el cobro íntegro del crédito exigido. En caso de haber arrendado un vehículo, conjuntamente con el pago de servicio del taller deberá ser abonado el costo del arrendamiento. </br><b>Retiro de Repuestos:</b> Las piezas sustituidas en las reparaciones estarán a disposición hasta el momento del retiro del vehículo. Yo cliente, manifiesto asumir responsabilidad respecto a su destino, disposición y uso comprometiéndome a dar cumplimiento a disposiciones legales y/o normativas que regulen la utilización de los mismos.</p>
+	  <tr> 
+		<td colspan="4" style="width:20%; text-align: justify"> 
+			<p style="font-size:10px; margin:0px; position: relative;">
+	<!--			<b>Autorización al Dpto. de Servicios de Gorostiaga a: </b>
+				Realizar los trabajos apuntados más arriba mediante la provisión de los repuestos y materiales que sean necesarios. A las pruebas del vehículo fuera del taller en las calles y rutas para garantizar los trabajos realizados </br>
+				<b>Informamos al Cliente que: </b>
+				La empresa tendrá derecho a cobrar 30.000 Gs. por día en concepto de estacionamiento y seguro a partir de las 24 horas de la fecha de notificación para el retiro del vehículo. La empresa no se responsabiliza por los objetos 
+				de valor dejados dentro del vehículo. Los datos proporcionados podrán ser utilizados en acciones de marketing, encuestas de calidad y llamadas de seguimiento. En caso de incumplimiento de pago por los servicios contratados, 
+				el presente instrumento se constituye en título ejecutivo, de conformidad a los artículos 439 y 448, inciso b) del C.P.C. De conformidad a lo establecido en el artículo 1.826 del Código Civil Paraguayo, Gorostiaga podrá ejercer 
+				derecho de retención del vehículo hasta el cobro íntegro del crédito exigido. En caso de haber arrendado un vehículo, conjuntamente con el pago de servicio del taller deberá ser abonado el costo del arrendamiento. </br>
+				<b>Retiro de Repuestos:</b> Las piezas sustituidas en las reparaciones estarán a disposición hasta el momento del retiro del vehículo. Yo cliente, manifiesto asumir responsabilidad respecto a su destino, disposición y 
+				uso comprometiéndome a dar cumplimiento a disposiciones legales y/o normativas que regulen la utilización de los mismos.</p>
+-->
+				<b>Autorización al Dpto. de Servicios de Gorostiaga a:</b> Realizar los trabajos apuntados más arriba mediante la provisión de los repuestos y materiales que sean necesarios. A las pruebas del vehículo fuera del taller en las calles y rutas para garantizar los trabajos realizados.
+				<b>Informamos al Cliente que:</b> La empresa tendrá derecho a cobrar 30.000 Gs. por día en concepto de estacionamiento y seguro a partir de las 48 horas de la fecha de notificación para el retiro del vehículo. La empresa no se responsabiliza por los objetos de valor dejados dentro del vehículo. Los datos proporcionados podrán ser utilizados en acciones de marketing, encuestas de calidad y llamadas de seguimiento. En caso de incumplimiento de pago por los servicios contratados, el presente instrumento se constituye en título ejecutivo, de conformidad a los artículos 439 y 448, inciso b) del C.P.C. De conformidad a lo establecido en el artículo 1.826 del Código Civil Paraguayo, Gorostiaga podrá ejercer derecho de retención del vehículo hasta el cobro íntegro del crédito exigido. <b>Retiro de Repuestos:</b> Las piezas sustituidas en las reparaciones estarán a disposición hasta el momento del retiro del vehículo. Yo cliente, manifiesto asumir responsabilidad respecto a su destino, disposición y uso comprometiéndome a dar cumplimiento a disposiciones legales y/o normativas que regulen la utilización de los mismos.
+
+
+
 		</td></tr>
 	
 	  <tr style="background-color:#eee !important;" class="text-center"> 
@@ -212,7 +229,8 @@
 	  <tr style="background-color:#eee !important;" class="text-center"> <td colspan="10"><strong> TICKET </strong></td> </tr>
       <tr class="text-center"  style="background-color:#eee !important;"> <td colspan="8" ><strong> CONFORMIDAD CLIENTE<strong></td> <td colspan="2"><strong>VEHICULO</strong></td> </tr>
       <tr> <td colspan="8" rowspan="2" style="width:60%;"> 
-				<strong><p style="margin-bottom:0px; text-align: center;"> Gorostiaga</p></strong> 
+				<!-- <strong><p style="margin-bottom:0px; text-align: center;"> Gorostiaga</p></strong>  -->
+				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="28%" height="28%" style="position: relative; top:15px;left:15px;">
 				<p id="sucu-direccion" style="font-size:10px;margin-bottom:0px; text-align: center;">Direccion Telefono <br> Correo - Asuncion Paraguay </p>
 				<p style="margin-bottom:0px; float: clear;font-size: 11px;"><strong> Estimado Cliente</p></strong> 
 				<p style="font-size:9px;margin-bottom:0px;"> * Para mantener el turno en el taller el presupuesto debera ser aceptado entre las 48 hs. </p>
