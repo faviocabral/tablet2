@@ -77,8 +77,8 @@
             <br> 
 		  		<!-- <h2 style="margin:0px;">Gorostiaga</h2> -->
 				<img src="logo_gorostiaga2.png" class="img-rounded " alt="Cinque Terre" width="45%" height="45%" style="position: relative;">
-                <p style="font-size:10px;">Direccion y telefono <br> 
-                correo - Asuncion Paraguay </p> 
+                <p style="font-size:10px;">Av. Madame Elisa A. Lynch esq. Sta. Teresa<br> 
+                Asuncion Paraguay </p> 
             </div> 
         	<div class="col-xs-3 text-right" style="padding-top: 10px;"> 
 		  		<span > <?php echo date("Y-m-d H:i"); ?> </span>
@@ -231,7 +231,7 @@
       <tr> <td colspan="8" rowspan="2" style="width:60%;"> 
 				<!-- <strong><p style="margin-bottom:0px; text-align: center;"> Gorostiaga</p></strong>  -->
 				<img src="logo_gorostiaga2.png" class="img-rounded " alt="Cinque Terre" width="30%" height="30%" style="position: relative; top:15px;left:15px;">
-				<p id="sucu-direccion" style="font-size:10px;margin-bottom:0px; text-align: center;">Direccion Telefono <br> Correo - Asuncion Paraguay </p>
+				<p id="sucu-direccion" style="font-size:10px;margin-bottom:0px; text-align: center;">Av. Madame Elisa A. Lynch esq. Sta. Teresa <br> Asuncion Paraguay </p>
 				<p style="margin-bottom:0px; float: clear;font-size: 11px;"><strong> Estimado Cliente</p></strong> 
 				<p style="font-size:9px;margin-bottom:0px;"> * Para mantener el turno en el taller el presupuesto debera ser aceptado entre las 48 hs. </p>
 				<p style="font-size:9px;margin-bottom:0px;"> * Horario de Atencion del Dpto. de Servicios de 07:30 a 18:00 hs de Lunes a Viernes Sabado de 07:30 a 12:00 hs. </p>
