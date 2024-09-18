@@ -394,7 +394,7 @@
 					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]) , item[1] , campo  )
 					$(campo).text(item[1]) 
 
-					if (item[0] == 'TipoServicio' ){ 
+					if (campo == '#TipoServicio' ){ 
 						if(item[1] == 1){ 
 							$(campo).text('CARGO CLIENTE')
 						}else if(item[1] == 2){ 
@@ -410,7 +410,7 @@
 						}else if(item[1] == 7){ 
 							$(campo).text('SERVICE EN CASA')
 						} 
-					}else if (item[0] == 'TipoLlamada'){
+					}else if (campo == '#TipoLlamada'){
 
 						if(item[1] == 1){ 
 							$(campo).text('SERVICE EXPRESS')
