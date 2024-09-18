@@ -237,7 +237,7 @@
 				<p style="font-size:9px;margin-bottom:0px;"> * Horario de Atencion del Dpto. de Servicios de 07:30 a 18:00 hs de Lunes a Viernes Sabado de 07:30 a 12:00 hs. </p>
 				<!-- <p style="font-size:9px;margin-bottom:0px;"> * La empresa no se responsabiliza por los objetos de valor dejados dentro del vehiculo. </p>-->
 				<p style="font-size:9px;margin-bottom:0px;"> * El ticket sera requerido para el retiro del vehiculo. </p> 
-				<p style="font-size:9px;margin-bottom:0px;"> * Es nuestra obligación informarle permanentemente el estado de los servicios solicitados a través del Clear Service. Su Asesor de Servicios debe proveerle evidencias audiovisuales vía WhatsApp para garantizar la transparencia de nuestros trabajos.</p> 
+				<!-- <p style="font-size:9px;margin-bottom:0px;"> * Es nuestra obligación informarle permanentemente el estado de los servicios solicitados a través del Clear Service. Su Asesor de Servicios debe proveerle evidencias audiovisuales vía WhatsApp para garantizar la transparencia de nuestros trabajos.</p>  -->
 				<!-- <p style="font-size:9px;margin-bottom:0px;"><b> * Apreciado cliente, el retiro de las piezas usadas reemplazadas es una garantía de la realización de trabajos. No olvide solicitar las mismas a su asesor de servicios <b></p> -->
 				<p style="font-size:9px;margin-bottom:0px;"> * Los datos proporcionados en esta Orden de Servicios podrán ser utilizados en acciones de marketing, encuestas de calidad y llamadas de seguimiento. </p> 
 				
