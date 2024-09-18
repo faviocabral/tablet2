@@ -76,7 +76,7 @@
         	<div class="col-xs-6 text-center"> 
             <br> 
 		  		<!-- <h2 style="margin:0px;">Gorostiaga</h2> -->
-				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="40%" height="40%">
+				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="45%" height="45%" style="position: relative;">
                 <p style="font-size:10px;">Direccion y telefono <br> 
                 correo - Asuncion Paraguay </p> 
             </div> 
@@ -230,7 +230,7 @@
       <tr class="text-center"  style="background-color:#eee !important;"> <td colspan="8" ><strong> CONFORMIDAD CLIENTE<strong></td> <td colspan="2"><strong>VEHICULO</strong></td> </tr>
       <tr> <td colspan="8" rowspan="2" style="width:60%;"> 
 				<!-- <strong><p style="margin-bottom:0px; text-align: center;"> Gorostiaga</p></strong>  -->
-				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="28%" height="28%" style="position: relative; top:15px;left:15px;">
+				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="30%" height="30%" style="position: relative; top:15px;left:15px;">
 				<p id="sucu-direccion" style="font-size:10px;margin-bottom:0px; text-align: center;">Direccion Telefono <br> Correo - Asuncion Paraguay </p>
 				<p style="margin-bottom:0px; float: clear;font-size: 11px;"><strong> Estimado Cliente</p></strong> 
 				<p style="font-size:9px;margin-bottom:0px;"> * Para mantener el turno en el taller el presupuesto debera ser aceptado entre las 48 hs. </p>
@@ -383,86 +383,6 @@
 					return ;
 				}
 				var valor ;
-				// rs.forEach( function ( rs2 ){ //fco recorre la lista de resultados por cada  objeto[](campos[])
-				// 	var callid = Object.keys(rs2), id = 0 , campo , campo2 ; //fco captura los nombres de los campos 
-				// 	Object.keys(rs2).forEach(function(key) { //fco recorre los campos con sus valores 
-				// 		campo = "#" + callid[id]; 
-				// 		campo2 = "." + callid[id]; 
-				// 		id++;
-				// 		valor = rs2[key]; 
-				// 		//console.log(campo);
-				// 		if (key == 'FechaApertura' ){ 
-				// 			valor = valor.substr(0, 10); 
-				// 		} else if (key == 'FechaVenta' ){ 
-				// 			valor = valor.substr(0, 10); 
-				// 		} else if (key == 'FechaCierre' ){ 
-				// 			valor = valor.substr(0, 10); 
-				// 		} else if (key == 'CodigoCliente' && ( valor.indexOf('C') == 0 || valor.indexOf('c') == 0 ) ){ 
-				// 			valor = valor.substr(1, 50); 
-				// 		} else if (key == 'TipoServicio' ){ 
-				// 			if(valor == 1){ 
-				// 				valor = 'CARGO CLIENTE';
-				// 			}else if(valor == 2){ 
-				// 				valor = 'PRE-ENTREGA';
-				// 			}else if(valor == 3){ 
-				// 				valor = 'GARANTIA';
-				// 			}else if(valor == 4){ 
-				// 				valor = 'REP USADO VTA';
-				// 			}else if(valor == 5){ 
-				// 				valor = 'PROMOCION';
-				// 			}else if(valor == 6){ 
-				// 				valor = 'USO TALLER/GARDEN';//192.168.10.54/tablet/imagenes/309796.png
-				// 			}else if(valor == 7){ 
-				// 				valor = 'SERVICE EN CASA';
-				// 			} 
-				// 		} else if (key == 'TipoLlamada'){
-
-				// 			if(valor == 1){ 
-				// 				valor = 'SERVICE EXPRESS';
-				// 			}else if(valor == 2){ 
-				// 				valor = 'REINGRESO/RECLAMO';
-				// 			}else if(valor == 3){ 
-				// 				valor = 'SERVICIO REPARACION';
-				// 			}else if(valor == 4){ 
-				// 				valor = 'REPARACIONES MAYORES';
-				// 			}else if(valor == 5){ 
-				// 				valor = 'CLIENTE EN ESPERA';
-				// 			}else if(valor == 6){ 
-				// 				valor = 'OTROS';//192.168.10.54/tablet/imagenes/309796.png
-				// 			}else if(valor == 7){ 
-				// 				valor = 'CAMPAÑA';
-				// 			}else if(valor == 8){ 
-				// 				valor = 'PRE-ENTREGA';
-				// 			}else if(valor == 9){ 
-				// 				valor = 'GARANTIA';
-				// 			} 
-
-
-				// 		if (key == 'Accesorios') {
-				// 			var accesorio = rs2['Accesorios'];
-				// 			var i = 0 ;
-				// 			while( i <= accesorio.length ){
-				// 			}
-				// 		}
-
-				// 		if(rs2['lavado'] == 'SI'){
-				// 			$("#lavadoSi").text('X')
-				// 		}else if(rs2['lavado'] == 'NO'){
-				// 			$("#lavadoNo").text('X')
-				// 		}
-
-				// 		//copiar en todos 
-				// 		} else if ( key == 'Chassis'){
-				// 			// ConsultarMora(valor);
-				// 			// Campaña(valor);
-				// 			// ConsultarPlanPlus(valor);
-				// 		}
-
-				// 		$(campo).html(valor); 
-				// 		$(campo2).html(valor?.toUpperCase()); 
-				// 	}); //fco este forEach trae los datos de cada campo de la consulta php ver archivo consulta.php 
-				// 	id = 0; 
-				// }); 
 
 				let dom = [...document.querySelectorAll('[id]')].map(item=> item.id ) 
 				console.log('datos para insertar... ', dom)
@@ -472,10 +392,47 @@
 				datos.forEach(item=>{ 
 					campo = "#"+ dom.find(x => x.toLowerCase() === item[0]) || ''
 					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]) , item[1] , campo  )
-					if(item[0] == ''){
-
-					}
 					$(campo).text(item[1]) 
+
+					if (item[0] == 'tiposervicio' ){ 
+						if(valor == 1){ 
+							$(campo).text('CARGO CLIENTE')
+						}else if(valor == 2){ 
+							$(campo).text('PRE-ENTREGA')
+						}else if(valor == 3){ 
+							$(campo).text('GARANTIA')
+						}else if(valor == 4){ 
+							$(campo).text('REP USADO VTA')
+						}else if(valor == 5){ 
+							$(campo).text('PROMOCION')
+						}else if(valor == 6){ 
+							$(campo).text('USO TALLER/GARDEN')
+						}else if(valor == 7){ 
+							$(campo).text('SERVICE EN CASA')
+						} 
+					}else if (item[0] == 'tipollamada'){
+
+						if(valor == 1){ 
+							$(campo).text('SERVICE EXPRESS')
+						}else if(valor == 2){ 
+							$(campo).text('REINGRESO/RECLAMO')
+						}else if(valor == 3){ 
+							$(campo).text('SERVICIO REPARACION')
+						}else if(valor == 4){ 
+							$(campo).text('REPARACIONES MAYORES')
+						}else if(valor == 5){ 
+							$(campo).text('CLIENTE EN ESPERA')
+						}else if(valor == 6){ 
+							$(campo).text('OTROS')
+						}else if(valor == 7){ 
+							$(campo).text('CAMPAÑA')
+						}else if(valor == 8){ 
+							$(campo).text('PRE-ENTREGA')
+						}else if(valor == 9){ 
+							$(campo).text('GARANTIA')
+						} 
+					}
+
 				})
 			} 
 		})
