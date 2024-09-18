@@ -76,7 +76,7 @@
         	<div class="col-xs-6 text-center"> 
             <br> 
 		  		<!-- <h2 style="margin:0px;">Gorostiaga</h2> -->
-				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="45%" height="45%" style="position: relative;">
+				<img src="logo_gorostiaga2.png" class="img-rounded " alt="Cinque Terre" width="45%" height="45%" style="position: relative;">
                 <p style="font-size:10px;">Direccion y telefono <br> 
                 correo - Asuncion Paraguay </p> 
             </div> 
@@ -230,7 +230,7 @@
       <tr class="text-center"  style="background-color:#eee !important;"> <td colspan="8" ><strong> CONFORMIDAD CLIENTE<strong></td> <td colspan="2"><strong>VEHICULO</strong></td> </tr>
       <tr> <td colspan="8" rowspan="2" style="width:60%;"> 
 				<!-- <strong><p style="margin-bottom:0px; text-align: center;"> Gorostiaga</p></strong>  -->
-				<img src="logo_gorostiaga2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="30%" height="30%" style="position: relative; top:15px;left:15px;">
+				<img src="logo_gorostiaga2.png" class="img-rounded " alt="Cinque Terre" width="30%" height="30%" style="position: relative; top:15px;left:15px;">
 				<p id="sucu-direccion" style="font-size:10px;margin-bottom:0px; text-align: center;">Direccion Telefono <br> Correo - Asuncion Paraguay </p>
 				<p style="margin-bottom:0px; float: clear;font-size: 11px;"><strong> Estimado Cliente</p></strong> 
 				<p style="font-size:9px;margin-bottom:0px;"> * Para mantener el turno en el taller el presupuesto debera ser aceptado entre las 48 hs. </p>
@@ -394,7 +394,7 @@
 					console.log('buscar ', dom.find(x => x.toLowerCase() === item[0]) , item[1] , campo  )
 					$(campo).text(item[1]) 
 
-					if (item[0] == 'tiposervicio' ){ 
+					if (item[0] == 'TipoServicio' ){ 
 						if(valor == 1){ 
 							$(campo).text('CARGO CLIENTE')
 						}else if(valor == 2){ 
@@ -410,7 +410,7 @@
 						}else if(valor == 7){ 
 							$(campo).text('SERVICE EN CASA')
 						} 
-					}else if (item[0] == 'tipollamada'){
+					}else if (item[0] == 'TipoLlamada'){
 
 						if(valor == 1){ 
 							$(campo).text('SERVICE EXPRESS')
