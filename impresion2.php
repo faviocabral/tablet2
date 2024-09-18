@@ -104,15 +104,15 @@
       <tr>
       	<td colspan=4>
       		<span style="margin-right: 3px;"><strong>Fecha : </strong> <span id="FechaApertura"></span></span>
-      		<span style="margin-right: 3px;"><strong>Fecha Promesa  : </strong> <span id="FechaPrometida"></span></span>
+      		<!-- <span style="margin-right: 3px;"><strong>Fecha Promesa  : </strong> <span id="FechaPrometida"></span></span>
       		<span style="margin-right: 3px;"><strong>Fecha Venta    : </strong> <span id="FechaVenta"></span></span>
-      		<span style="margin-right: 3px;"><strong>Fecha Cierre: </strong><span id="FechaCierre"></span> </span>
+      		<span style="margin-right: 3px;"><strong>Fecha Cierre: </strong><span id="FechaCierre"></span> </span> -->
       		<span style="margin-right: 3px;"><strong>Cono: </strong><span id="Identificador"></span> </span>
-	      		<span style="margin-right: 5px;"><strong>Nro Doc: </strong><span id="NroDocumento"></span> </span>
+	      		<!-- <span style="margin-right: 5px;"><strong>Nro Doc: </strong><span id="NroDocumento"></span> </span> -->
 	      		<!--<span style="margin-right: 20px;"><strong>Nro OT: </strong><span id="NroOt"></span> </span>-->
 	      		<span style="margin-right: 5px;"><strong>Asesor: </strong><span id="Asesor"></span> </span>
-	      		<span style="margin-right: 5x;"><strong>contacto : </strong><span id="contacto_cliente"></span> </span>
-	      		<span style="margin-right: 5x;"><strong>Email: </strong><span id="contacto_email"></span> </span>
+	      		<!-- <span style="margin-right: 5x;"><strong>contacto : </strong><span id="contacto_cliente"></span> </span>
+	      		<span style="margin-right: 5x;"><strong>Email: </strong><span id="contacto_email"></span> </span> -->
       	</td>
       </tr>
       <tr class="text-center"  style="background-color:#eee !important;"> 
@@ -147,6 +147,7 @@
       	<td><strong>Color:</strong> </td>
       	<td id="Color" style=" font-size: 12px;">rojo </td>
       </tr>
+	  <tr style="background-color:#eee !important;" class="text-center"><td colspan="4"><strong> DETALLE DEL VEHICULO</strong></td> </tr>
       <tr style="background-color:#eee !important;"> <td colspan="4"><strong> COMENTARIO</strong></td> </tr>
       <tr> <td colspan="4"  style="height: 40px; max-height: 40px; text-align: justify; margin: 0px; position: relative; overflow: hidden;"> 
       			<p id="PedidoCliente" style="font-size:11px; margin:0px; position: absolute; top:-2px;"></p> 
@@ -163,27 +164,26 @@
       			<p id="Accesorios" style="font-size:12px; margin:0px; position: relative; top:-1px;"></p> 
        </td> </tr> -->
       
-	  <tr style="background-color:#eee !important;" class="text-center"><td colspan="4"><strong> DETALLE DEL VEHICULO</strong></td> </tr>
-	  <tr style="background-color:#eee !important;"> <td colspan="2"><strong> DETALLE DEL SERVICIO</strong></td> <td colspan="1"><strong> COMBUSTIBLE</strong></td> <td colspan="1"><strong> DETALLE EXTERNO</strong></td></tr>
+	  <!-- <tr style="background-color:#eee !important;" class="text-center"><td colspan="4"><strong> DETALLE DEL VEHICULO</strong></td> </tr> -->
+
+	  <!-- <tr style="background-color:#eee !important;"> <td colspan="2"><strong> DETALLE DEL SERVICIO</strong></td> <td colspan="1"><strong> COMBUSTIBLE</strong></td> <td colspan="1"><strong> DETALLE EXTERNO</strong></td></tr>
       <tr> 
 		<td colspan="2" style="width:10%;" id="list-accesorios">
-		<!-- <p><b>Ducha Cortesia: si(<span id='lavadoSi'>_</span>) no(<span id="lavadoNo">_</span>)</b></p>
-		<p><b>Precio Estimado del Servicio: <span id='costoServicio'>___________</span></b></p> -->
 		</td>  
       		<td colspan="1" rowspan="6" style="width:20%;">
 				<center>
-					<!-- <div id="fuelMeterDiv" class="dm-wrapperDiv"><div class="dm-bgClrDiv normal" style="transform: rotate(10deg); z-index: 3;"></div><div class="dm-bgClrDiv warn" style="transform: rotate(7deg); z-index: 2;"></div><div class="dm-bgClrDiv error" style="transform: rotate(0deg); z-index: 1;"></div><div class="dm-maskDiv" style="transform: rotate(0deg);"></div><div class="dm-innerDiv"><p class="dm-valueP Combustible">0</p><p class="dm-unitP">%</p><p class="dm-labelP">Combustible</p></div></div>	-->
 				</center>
 			</td> 
 			<td colspan="1" rowspan="6" style="width:40%;">
       			<center><img src="vehiculo2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="80%" height="80%"> </center>
       		</td>
-      </tr>
-      <tr><td colspan="2" rowspan="5" style="width:10%;" id="Observacion"> </td></tr>
+      </tr> -->
+
+      <!-- <tr><td colspan="2" rowspan="5" style="width:10%;" id="Observacion"> </td></tr>
       <tr><td colspan="2" style="width:10%;"> </td></tr>
       <tr><td colspan="2" style="width:10%;"> </td></tr>
       <tr><td colspan="2" style="width:10%;"> </td></tr>
-      <tr><td colspan="2" style="width:10%;"> </td></tr>
+      <tr><td colspan="2" style="width:10%;"> </td></tr> -->
 
 	  <tr style="background-color:#eee !important;" class="text-center"> <td colspan="4"><strong> AUTORIZACION</strong></td></tr>
 	  <tr> 
