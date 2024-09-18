@@ -395,40 +395,40 @@
 					$(campo).text(item[1]) 
 
 					if (item[0] == 'TipoServicio' ){ 
-						if(valor == 1){ 
+						if(item[1] == 1){ 
 							$(campo).text('CARGO CLIENTE')
-						}else if(valor == 2){ 
+						}else if(item[1] == 2){ 
 							$(campo).text('PRE-ENTREGA')
-						}else if(valor == 3){ 
+						}else if(item[1] == 3){ 
 							$(campo).text('GARANTIA')
-						}else if(valor == 4){ 
+						}else if(item[1] == 4){ 
 							$(campo).text('REP USADO VTA')
-						}else if(valor == 5){ 
+						}else if(item[1] == 5){ 
 							$(campo).text('PROMOCION')
-						}else if(valor == 6){ 
+						}else if(item[1] == 6){ 
 							$(campo).text('USO TALLER/GARDEN')
-						}else if(valor == 7){ 
+						}else if(item[1] == 7){ 
 							$(campo).text('SERVICE EN CASA')
 						} 
 					}else if (item[0] == 'TipoLlamada'){
 
-						if(valor == 1){ 
+						if(item[1] == 1){ 
 							$(campo).text('SERVICE EXPRESS')
-						}else if(valor == 2){ 
+						}else if(item[1] == 2){ 
 							$(campo).text('REINGRESO/RECLAMO')
-						}else if(valor == 3){ 
+						}else if(item[1] == 3){ 
 							$(campo).text('SERVICIO REPARACION')
-						}else if(valor == 4){ 
+						}else if(item[1] == 4){ 
 							$(campo).text('REPARACIONES MAYORES')
-						}else if(valor == 5){ 
+						}else if(item[1] == 5){ 
 							$(campo).text('CLIENTE EN ESPERA')
-						}else if(valor == 6){ 
+						}else if(item[1] == 6){ 
 							$(campo).text('OTROS')
-						}else if(valor == 7){ 
+						}else if(item[1] == 7){ 
 							$(campo).text('CAMPAÑA')
-						}else if(valor == 8){ 
+						}else if(item[1] == 8){ 
 							$(campo).text('PRE-ENTREGA')
-						}else if(valor == 9){ 
+						}else if(item[1] == 9){ 
 							$(campo).text('GARANTIA')
 						} 
 					}
