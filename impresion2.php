@@ -166,7 +166,7 @@
       
 	  <!-- <tr style="background-color:#eee !important;" class="text-center"><td colspan="4"><strong> DETALLE DEL VEHICULO</strong></td> </tr> -->
 
-	  <!-- <tr style="background-color:#eee !important;"> <td colspan="2"><strong> DETALLE DEL SERVICIO</strong></td> <td colspan="1"><strong> COMBUSTIBLE</strong></td> <td colspan="1"><strong> DETALLE EXTERNO</strong></td></tr>
+	  <tr style="background-color:#eee !important;"> <td colspan="2"><strong> DETALLE DEL SERVICIO</strong></td> <td colspan="1"><strong> COMBUSTIBLE</strong></td> <td colspan="1"><strong> DETALLE EXTERNO</strong></td></tr>
       <tr> 
 		<td colspan="2" style="width:10%;" id="list-accesorios">
 		</td>  
@@ -177,13 +177,13 @@
 			<td colspan="1" rowspan="6" style="width:40%;">
       			<center><img src="vehiculo2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="80%" height="80%"> </center>
       		</td>
-      </tr> -->
+      </tr>
 
-      <!-- <tr><td colspan="2" rowspan="5" style="width:10%;" id="Observacion"> </td></tr>
+      <tr><td colspan="2" rowspan="5" style="width:10%;" id="Observacion"> </td></tr>
       <tr><td colspan="2" style="width:10%;"> </td></tr>
       <tr><td colspan="2" style="width:10%;"> </td></tr>
       <tr><td colspan="2" style="width:10%;"> </td></tr>
-      <tr><td colspan="2" style="width:10%;"> </td></tr> -->
+      <tr><td colspan="2" style="width:10%;"> </td></tr>
 
 	  <tr style="background-color:#eee !important;" class="text-center"> <td colspan="4"><strong> AUTORIZACION</strong></td></tr>
 	  <tr> 
