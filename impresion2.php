@@ -36,17 +36,17 @@
 		*/
 
 	/*page[size="A4"] {*/
-	page[size="Folio"] {
+	page[size="letter"] {
 	  background: white;
-	  width:  8.5in;  /* Legal - width:  8.5in; Folio - width:  21cm;   A4 */
-	  height: 14.0in; /* Legal - height: 13.0in;Folio - height: 29.7cm; A4 */
+	  width:  8.5in;  /* Legal - width:  8.5in; letter - width:  21cm;   A4 */
+	  height:  11.0in; /* Legal - height: 13.0in;letter - height: 29.7cm; A4 */
 	  display: block;
 	  margin: 0 auto;
 	  margin-bottom: 0.2cm;
 	  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
 	}
 	@media print { 
-	  body, page[size="Folio"] { 
+	  body, page[size="letter"] { 
 		margin: 0; 
 		box-shadow: 0; 
 	  } 
@@ -67,7 +67,7 @@
   </style>
 </head>
 <body onload="">
-<page size="Folio">
+<page size="letter">
 <div class="container-fluid" style="margin:10px; position: relative;">
         <div class="row"> 
         	<div class="col-xs-3 text-left"> 
@@ -263,7 +263,7 @@
   </div>
 </page>
 
-<page size="Folio" style="display: none">
+<page size="letter" style="display: none">
 	<div class="container-fluid" >
 	  <table id="tabla2" class="table" style="margin-top: 20px;">
 	    <thead>
@@ -476,7 +476,7 @@
 		var valor ;
 		if ( $("#contenido").height() > 740 ){
 			valor = $("#contenido").height() -740 ;
-			//valor = 1195 - valor ;  //folio
+			//valor = 1195 - valor ;  //letter
 			valor = 1180 - valor ; 
 			$("#ticket").offset({top:valor}) ;
 		} else {
