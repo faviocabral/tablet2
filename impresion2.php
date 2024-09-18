@@ -158,10 +158,10 @@
 
       </td> </tr>
 
-	  <tr style="background-color:#eee !important;"> <td colspan="4"><strong> OBSERVACIONES</strong></td> </tr>
+	  <!-- <tr style="background-color:#eee !important;"> <td colspan="4"><strong> OBSERVACIONES</strong></td> </tr>
       <tr> <td colspan="4" style="height: 35px; max-height: 30px; position: relative; overflow: hidden">
       			<p id="Accesorios" style="font-size:12px; margin:0px; position: relative; top:-1px;"></p> 
-       </td> </tr>
+       </td> </tr> -->
       
 	  <tr style="background-color:#eee !important;" class="text-center"><td colspan="4"><strong> DETALLE DEL VEHICULO</strong></td> </tr>
 	  <tr style="background-color:#eee !important;"> <td colspan="2"><strong> DETALLE DEL SERVICIO</strong></td> <td colspan="1"><strong> COMBUSTIBLE</strong></td> <td colspan="1"><strong> DETALLE EXTERNO</strong></td></tr>
