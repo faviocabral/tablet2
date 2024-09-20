@@ -148,16 +148,28 @@
       	<td id="Color" style=" font-size: 12px;">rojo </td>
       </tr>
 	  <tr style="background-color:#eee !important;" class="text-center"><td colspan="4"><strong> DETALLE DEL VEHICULO</strong></td> </tr>
-      <tr style="background-color:#eee !important;"> <td colspan="4"><strong> COMENTARIO</strong></td> </tr>
-      <tr> <td colspan="4"  style="height: 40px; max-height: 40px; text-align: justify; margin: 0px; position: relative; overflow: hidden;"> 
+
+	  <tr style="background-color:#eee !important;"> <td colspan="2"><strong> COMENTARIO</strong></td> 
+	</tr>
+      <tr> <td colspan="2" style="height: 40px; max-height: 40px; text-align: justify; margin: 0px; position: relative; overflow: hidden;"> 
       			<p id="PedidoCliente" style="font-size:11px; margin:0px; position: absolute; top:-2px;"></p> 
-      		</td> </tr>
+      		</td> 
+			  <td colspan="1" rowspan="3"  style="width:20%;"> 
+				<!--<center><img src="combustible.png" style="margin-top:0px; filter: grayscale(100%);" class="img-rounded combustible" alt="Cinque Terre" width="100%" height="100%"> </center>  -->
+				<center>
+					<div id="fuelMeterDiv" class="dm-wrapperDiv"><div class="dm-bgClrDiv normal" style="transform: rotate(10deg); z-index: 3;"></div><div class="dm-bgClrDiv warn" style="transform: rotate(7deg); z-index: 2;"></div><div class="dm-bgClrDiv error" style="transform: rotate(0deg); z-index: 1;"></div><div class="dm-maskDiv" style="transform: rotate(0deg);"></div><div class="dm-innerDiv"><p class="dm-valueP Combustible">0</p><p class="dm-unitP">%</p><p class="dm-labelP">Combustible</p></div></div>	
+				</center>
+			</td>
+			<td colspan="1" rowspan="3" style="width:20%;"><center><img src="vehiculo2.png" class="img-rounded detalle_vehiculo" alt="Cinque Terre" width="80%" height="80%"> </center> 
+			</td>
+		</tr> 
 
-	  <tr style="background-color:#eee !important;"> <td colspan="4"><strong> MOTIVO / SINTOMAS </strong></td> </tr>
-      <tr> <td colspan="4" style="height: 40px; max-height: 40px; position: relative; overflow: hidden"> 
+	  <tr style="background-color:#eee !important;"> <td colspan="2" rowspan="1" style="height:5px;"><strong> MOTIVO / SINTOMAS </strong></td> </tr>
+      <tr> 
+			<td colspan="2" style="height: 40px; max-height: 40px; position: relative; overflow: hidden"> 
       			<p id="Motivo" style="font-size:11px; margin:0px; position: absolute; top:-2px;"></p> 
-
-      </td> </tr>
+      		</td>
+		</tr>
 
 	  <!-- <tr style="background-color:#eee !important;"> <td colspan="4"><strong> OBSERVACIONES</strong></td> </tr>
       <tr> <td colspan="4" style="height: 35px; max-height: 30px; position: relative; overflow: hidden">
