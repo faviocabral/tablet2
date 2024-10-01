@@ -209,8 +209,6 @@ $env = parse_ini_file('.env');
 				  select * from oscl order by callid desc limit 1 ;
 
 				  ";
-
-		//echo $consulta;
   
 		  $rs = pg_query( $conexión, $consulta );
 		  if ( !$rs )
@@ -221,10 +219,76 @@ $env = parse_ini_file('.env');
 		  while ( $row = pg_fetch_array($rs) )
 		  {
 			  $valor[] = $row;
-		  }	
-		  echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
+		  }
+		  $datos = 	json_encode( $valor );
 
-		  
+		  $consulta2 = 
+		  "
+		  insert into orden_trabajo (
+			ot_numero, -- NroLlamada
+			ot_fecha, -- 
+			ot_fecha_cierre, -- 
+			ot_estado,  --1 
+			to_codigo,  -- tipoServicio 1->cargo cliente 2->pre-entrega 3->garantia 
+			loc_codigo, -- 1 central (sucursal) 
+			cli_codigo, -- codigoCliente ->ruc 
+			tp_codigo,  -- 'REPARACION'
+			ts_codigo,  -- 1 -- tipo de servicio 
+			os_codigo,  -- 2 -- origen servicio 
+			ot_pedido,  -- Motivo 
+			ot_resolucion, -- ''
+			fun_codigo_creador, --0 --Asesor 
+			fun_codigo_modificador, --0
+			fec_creacion, --''
+			fec_modificacion, --''
+			fun_asesor, --0 -- Asesor
+			fun_probador, --0
+			ot_km_entrada, -- Kilometraje
+			ot_km_salida, -- 0
+			ot_chapa, -- Chapa
+			ot_chassis, -- Chassis
+			pro_codigo, -- Chassis
+			tiene_licitacion, -- ''
+			ot_comentario_licitacion, --'' 
+			cli_lleva_rep_viejo, --''
+			ot_indicador_combustible --0
+		  )
+		 
+		  values (
+			$datos[0]['callid'],
+			now(), --fecha 
+			null,  --ot_fecha_cierre 
+			1, --ot_estado 
+			$u_tipo, --to_codigo,  --> tipoServicio 1->cargo cliente 2->pre-entrega 3->garantia 
+			1, --loc_codigo, -- 1 central (sucursal) 
+			$customer, --cli_codigo, -- codigoCliente ->ruc 
+			'REPARACION', ---tp_codigo,  -- 'REPARACION'
+			1, --ts_codigo,  -- 1 -- tipo de servicio 
+			2, --os_codigo,  -- 2 -- origen servicio 
+			'$subject', --ot_pedido,  -- Motivo 
+			'', --ot_resolucion, -- ''
+			$assignee, --fun_codigo_creador, --0 --Asesor 
+			0, --fun_codigo_modificador, --0
+			now(), --fec_creacion, --''
+			null, --fec_modificacion, --''
+			$assignee, --fun_asesor, --0 -- Asesor
+			0, --fun_probador, --0
+			$u_kmEntrada, --ot_km_entrada, -- Kilometraje
+			0, --ot_km_salida, -- 0
+			'$street', --ot_chapa, -- Chapa
+			'$itemCode', --ot_chassis, -- Chassis
+			'$itemCode', --pro_codigo, -- Chassis
+			'', --tiene_licitacion, -- ''
+			'', --ot_comentario_licitacion, --'' 
+			'', --cli_lleva_rep_viejo, --''
+			0, --ot_indicador_combustible --0
+			);
+		";
+		//echo $consulta;
+
+		$rs = pg_query( $conexión2, $consulta2 );
+		
+		echo $datos; //fco esta linea codifica para ser leido como json 
 
 
 	} elseif($funcion == 'ConsultarTurnos'){
