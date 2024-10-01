@@ -220,8 +220,8 @@ $env = parse_ini_file('.env');
 		  {
 			  $valor[] = $row;
 		  }
-		  $datos = 	json_encode( $valor );
-		  echo $datos[0];
+		  $datos = 	 $valor ;
+		  echo $datos[0]['callid'];
 		  return ;
 
 		  $consulta2 = 
