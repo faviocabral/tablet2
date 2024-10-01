@@ -278,7 +278,7 @@ $env = parse_ini_file('.env');
 			0, --ot_km_salida, -- 0
 			'$street', --ot_chapa, -- Chapa
 			'$itemCode', --ot_chassis, -- Chassis
-			'$itemCode', --pro_codigo, -- Chassis
+			0, --pro_codigo, -- Chassis
 			false, --tiene_licitacion, -- ''
 			'', --ot_comentario_licitacion, --'' 
 			false, --cli_lleva_rep_viejo, --''
