@@ -364,10 +364,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="col-md-0"> 
         <div class="box" style="margin-bottom:5px;"> 
         <center>
-            <!-- <div class="btn-group btn-group-justified" style="height: 80px;">
-              <a href="#" class="btn btn-danger" style="font-size: 30px;" onclick="setSucursal(this)" id="servicio" base="agenda2" name="servicio"><strong>SUCURSAL 1</strong></a>
-            </div>  -->
-          </center>
+          <div class="btn-group btn-group-justified" style="height: 80px;">
+            <a href="#" class="btn btn-danger" style="font-size: 30px;" onclick="setSucursal(this)" id="santaTeresa" base="agenda2" name="servicio"><strong>SANTA TERESA</strong></a>
+            <a href="#" class="btn btn-danger" style="font-size: 30px;" onclick="setSucursal(this)" id="santaRita" base="agenda2" name="servicio"><strong>SANTA RITA</strong></a>
+            <a href="#" class="btn btn-danger" style="font-size: 30px;" onclick="setSucursal(this)" id="cde" base="agenda2" name="servicio"><strong>CDE</strong></a>
+          </div> 
+        </center>
+
         </div> 
       </div> 
 
@@ -773,14 +776,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       }
     */
       var id = $(elem).attr("id");
-      if(id == 'MRAKIA'){
-        localStorage.setItem("sucursal", 'MRA KIA');
-      }else if(id == 'MRAFCA'){
-        localStorage.setItem("sucursal", 'MRA FCA');
-      }else if(id == 'MRAMPY'){
-        localStorage.setItem("sucursal", 'MRA MPY');
-      }else{
-        localStorage.setItem("sucursal", $(elem).attr("id"));
+      if(id == 'santaTeresa'){
+        localStorage.setItem("sucursal", '3');
+      }else if(id == 'santaRita'){
+        localStorage.setItem("sucursal", '2');
+      }else if(id == 'cde'){
+        localStorage.setItem("sucursal", '1');
       }
         localStorage.setItem("base", $(elem).attr("base") );
         localStorage.removeItem("asesor");
