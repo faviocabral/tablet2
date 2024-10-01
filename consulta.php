@@ -221,7 +221,7 @@ $env = parse_ini_file('.env');
 			  $valor[] = $row;
 		  }
 		  $datos = 	 $valor ;
-
+		  $ot = $datos[0]['callid']; 
 		  $consulta2 = 
 		  "
 		  insert into orden_trabajo (
@@ -255,7 +255,7 @@ $env = parse_ini_file('.env');
 		  )
 		 
 		  values (
-			$datos[0]['callid'],
+			$ot,
 			now(), --fecha 
 			null,  --ot_fecha_cierre 
 			1, --ot_estado 
