@@ -221,8 +221,6 @@ $env = parse_ini_file('.env');
 			  $valor[] = $row;
 		  }
 		  $datos = 	 $valor ;
-		  echo $datos[0]['callid'];
-		  return ;
 
 		  $consulta2 = 
 		  "
@@ -294,7 +292,7 @@ $env = parse_ini_file('.env');
 			exit( "Error en la consulta SQL" );
 		}
 
-		//echo $datos; //fco esta linea codifica para ser leido como json 
+		echo json_encode( $datos ); //fco esta linea codifica para ser leido como json 
 
 
 	} elseif($funcion == 'ConsultarTurnos'){
