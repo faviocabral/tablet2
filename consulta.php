@@ -222,7 +222,7 @@ $env = parse_ini_file('.env');
 		  }
 		  $datos = 	 $valor ;
 		  $ot = $datos[0]['callid']; 
-		  $codigoCliente = substr($customer, 1 , 7);
+		  $codigoCliente = substr($customer, 1 , 6);
 		  $consulta2 = 
 		  "
 		  insert into orden_trabajo (
