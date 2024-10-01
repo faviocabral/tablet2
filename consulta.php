@@ -289,7 +289,7 @@ $env = parse_ini_file('.env');
 		$rs = pg_query( $conexión2, $consulta2 );
 		if ( !$rs )
 		{
-			exit( "Error en la consulta SQL" );
+			//exit( "Error en la consulta SQL" );
 		}
 
 		//echo json_encode( $datos ); //fco esta linea codifica para ser leido como json 
