@@ -221,7 +221,7 @@ $env = parse_ini_file('.env');
 			  $valor[] = $row;
 		  }
 		  $datos = 	json_encode( $valor );
-		  echo $datos[0]['callid'];
+		  echo $datos[0];
 		  $consulta2 = 
 		  "
 		  insert into orden_trabajo (
