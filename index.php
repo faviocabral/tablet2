@@ -451,12 +451,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Estado:</label></div> 
 											<div class="col-sm-12">
 											<select class="form-control lock" id="OtEstado" name="OtEstado">
-												<option value="-3">Abierto</option>
-												<option value="2">Impreso</option>
-												<option value="3">Distribuido</option>
-												<option value="5">Concluido</option>
-												<option value="-1">Cerrado</option>
-												<option value="1">Cancelado</option>
+												<option value="1">Abierto</option>
+												<option value="2">En Proceso</option>
+												<option value="3">Cerrado</option>
+												<option value="4">Facturado</option>
+												<option value="5">Anulado</option>
 											</select>
 											</div>
 										</div>
@@ -2873,7 +2872,6 @@ async	function NuevoCliente(){
 		$("#form1").submit(function(event){
 			event.preventDefault();
 		})
-
 		
 		function Grabar(evento){
       console.log($("#form1").serialize());

@@ -88,11 +88,11 @@
         </div> 
 
         <!-- copiar en todos -->
-        <div class="row" style="margin-bottom: 5px; display:flex; justify-content:space-between;">
+        <!-- <div class="row" style="margin-bottom: 5px; display:flex; justify-content:space-between;">
 			<div > <span style="visibility: hidden;" id="campaña"><span class='badge'><span class='glyphicon glyphicon-alert'></span>Vehiculo con Campaña!</span> </div>
 			<div > <span id="PlanPlus3" class="badge"> <i class="fa fa-spinner fa-spin fa-1x fa-fw"></i></span> </div> 
         	<div > <span id="mora" class="badge"> <i class="fa fa-spinner fa-spin fa-1x fa-fw"></i> </span> </div>
-        </div>  
+        </div>   -->
       
   <table id="contenido" >
     <thead>
