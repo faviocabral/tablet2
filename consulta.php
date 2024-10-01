@@ -284,7 +284,7 @@ $env = parse_ini_file('.env');
 			0, --ot_indicador_combustible --0
 			);
 		";
-		//echo $consulta;
+		echo $consulta2;
 
 		$rs = pg_query( $conexión2, $consulta2 );
 		if ( !$rs )
@@ -292,7 +292,7 @@ $env = parse_ini_file('.env');
 			exit( "Error en la consulta SQL" );
 		}
 
-		echo $consulta2; //fco esta linea codifica para ser leido como json 
+		echo $datos; //fco esta linea codifica para ser leido como json 
 
 
 	} elseif($funcion == 'ConsultarTurnos'){
