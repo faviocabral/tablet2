@@ -222,6 +222,7 @@ $env = parse_ini_file('.env');
 		  }
 		  $datos = 	 $valor ;
 		  $ot = $datos[0]['callid']; 
+		  $codigoCliente = substr($customer, 1 , 7);
 		  $consulta2 = 
 		  "
 		  insert into orden_trabajo (
@@ -261,7 +262,7 @@ $env = parse_ini_file('.env');
 			1, --ot_estado 
 			$u_tipo, --to_codigo,  --> tipoServicio 1->cargo cliente 2->pre-entrega 3->garantia 
 			1, --loc_codigo, -- 1 central (sucursal) 
-			substr($customer, 1 , 7), --cli_codigo, -- codigoCliente ->ruc 
+			$codigoCliente, --cli_codigo, -- codigoCliente ->ruc 
 			'REPARACION', ---tp_codigo,  -- 'REPARACION'
 			1, --ts_codigo,  -- 1 -- tipo de servicio 
 			2, --os_codigo,  -- 2 -- origen servicio 
