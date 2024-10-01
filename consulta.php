@@ -261,7 +261,7 @@ $env = parse_ini_file('.env');
 			1, --ot_estado 
 			$u_tipo, --to_codigo,  --> tipoServicio 1->cargo cliente 2->pre-entrega 3->garantia 
 			1, --loc_codigo, -- 1 central (sucursal) 
-			$customer, --cli_codigo, -- codigoCliente ->ruc 
+			substr($customer, 1 , 7), --cli_codigo, -- codigoCliente ->ruc 
 			'REPARACION', ---tp_codigo,  -- 'REPARACION'
 			1, --ts_codigo,  -- 1 -- tipo de servicio 
 			2, --os_codigo,  -- 2 -- origen servicio 
@@ -278,10 +278,10 @@ $env = parse_ini_file('.env');
 			'$street', --ot_chapa, -- Chapa
 			'$itemCode', --ot_chassis, -- Chassis
 			'$itemCode', --pro_codigo, -- Chassis
-			'', --tiene_licitacion, -- ''
+			false, --tiene_licitacion, -- ''
 			'', --ot_comentario_licitacion, --'' 
-			'', --cli_lleva_rep_viejo, --''
-			0, --ot_indicador_combustible --0
+			false, --cli_lleva_rep_viejo, --''
+			0 --ot_indicador_combustible --0
 			);
 		";
 		echo $consulta2;
