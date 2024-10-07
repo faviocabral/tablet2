@@ -372,7 +372,7 @@ $env = parse_ini_file('.env');
 			, room = '$room'
 			, nombreasesor = '$nombreAsesor'
 			, u_sucursal = '$sucursal'
-			, u_combustible = '$combustible'
+			, combustible = '$combustible'
 			where callid = $ot
 
 		";
