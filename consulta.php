@@ -34,7 +34,7 @@ $env = parse_ini_file('.env');
 		if( isset($_POST['NroOt']) ) {
 		  $NroOt = $_POST['NroOt'];
 		} else {
-		  die("Solicitud no válida.");
+		  die("Solicitud no válidaaaaaaaaaa.");
 		}
 		
 		//fco en esta consulta los campos deben ser iguales a las del form para que se pueda automatizar . 
@@ -71,19 +71,19 @@ $env = parse_ini_file('.env');
 						,'' Modelo2
 						,nombreasesor Asesor
 						,nombreasesor Asesor2, 
-						COALESCE( Observaciones, '') Observaciones, 
-						COALESCE( Detalle_vehiculo, '') as DetalleVehiculo , 
+						'' Observaciones, 
+						'' DetalleVehiculo , 
 						'' Accesorios, 
-						COALESCE( Combustible, 0) Combustible, 
-						COALESCE( contacto_cliente, '') as contacto_cliente, 
+						u_combustible Combustible, 
+						'' contacto_cliente, 
 						'' FechaPrometida, 
-						t1.sucursal sucursal ,
-						t1.campanha campanha , 
+						u_sucursal sucursal ,
+						'' campanha , 
 						'' contacto_email , 
-						t1.lavado,
-						t1.costoServicio
-					FROM OSCL left outer join ot_tablet T1 on OSCL.callID = t1.ot 
-					WHERE ( callID = $NroOt ) 
+						'' lavado,
+						'' costoServicio
+					FROM OSCL 
+					WHERE callID = $NroOt  
 				";
 			$rs = pg_query( $conexión, $consulta );
 			if ( !$rs )
@@ -175,6 +175,21 @@ $env = parse_ini_file('.env');
 		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
 
 
+	} elseif($funcion == 'insertarOrden2'){
+		$consulta3 = " Select coalesce(max(ot_numero),0) + 1 as ot  From orden_trabajo where loc_codigo = 3";
+		$rs = pg_query( $conexión2, $consulta3 );
+		if ( !$rs )
+		{
+			exit( "Error en la consulta SQL" );
+		}
+		while ( $row = pg_fetch_array($rs) )
+		{
+			$valor[] = $row;
+		}
+		$datos = $valor;
+		$ot = $datos[0]['ot']; 
+		echo $ot;
+
 	} elseif($funcion == 'insertarOrden'){
 
 		if( isset($_POST['datos']) ) {
@@ -200,13 +215,28 @@ $env = parse_ini_file('.env');
 		  $description = $array['PedidoCliente'];
 		  $subject = $array['Motivo'];
 		  $room = $array['Identificador'];
-			
+		  $sucursal = $_POST['sucursal'];
+		  $combustible = $array['combustible'];
+		  $codigoCliente2 = $array['codigoCliente2'];
+		  $proCodigo = $array['proCodigo'];
+	  
+		  $consulta3 = " Select coalesce(max(ot_numero),0) + 1 as ot  From orden_trabajo where loc_codigo = $sucursal ";
+		  $rs = pg_query( $conexión2, $consulta3 );
+		  if ( !$rs )
+		  {
+			  exit( "Error en la consulta SQL" );
+		  }
+		  while ( $row = pg_fetch_array($rs) )
+		  {
+			  $valor[] = $row;
+		  }
+		  $datos = $valor;
+		  $ot = $datos[0]['ot']; 
+
 		  $consulta = 
 				  "
-				  insert into oscl ( docnum , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor )
-				  values (0, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor');
-
-				  select * from oscl order by callid desc limit 1 ;
+				  insert into oscl ( docnum, callid , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor, u_sucursal, u_combustible )
+				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible );
 
 				  ";
   
@@ -220,8 +250,8 @@ $env = parse_ini_file('.env');
 		  {
 			  $valor[] = $row;
 		  }
-		  $datos = 	 $valor ;
-		  $ot = $datos[0]['callid']; 
+
+
 		  $codigoCliente = substr($customer, 1 , 6);
 		  $consulta2 = 
 		  "
@@ -261,8 +291,8 @@ $env = parse_ini_file('.env');
 			null,  --ot_fecha_cierre 
 			1, --ot_estado 
 			$u_tipo, --to_codigo,  --> tipoServicio 1->cargo cliente 2->pre-entrega 3->garantia 
-			1, --loc_codigo, -- 1 central (sucursal) 
-			$codigoCliente, --cli_codigo, -- codigoCliente ->ruc 
+			$sucursal, --loc_codigo, -- 1 central (sucursal) 
+			$codigoCliente2, --cli_codigo, -- codigoCliente ->ruc 
 			'REPARACION', ---tp_codigo,  -- 'REPARACION'
 			1, --ts_codigo,  -- 1 -- tipo de servicio 
 			2, --os_codigo,  -- 2 -- origen servicio 
@@ -278,11 +308,11 @@ $env = parse_ini_file('.env');
 			0, --ot_km_salida, -- 0
 			'$street', --ot_chapa, -- Chapa
 			'$itemCode', --ot_chassis, -- Chassis
-			0, --pro_codigo, -- Chassis
+			$proCodigo, --pro_codigo -- Chassis
 			false, --tiene_licitacion, -- ''
 			'', --ot_comentario_licitacion, --'' 
 			false, --cli_lleva_rep_viejo, --''
-			0 --ot_indicador_combustible --0
+			$combustible --ot_indicador_combustible --0
 			);
 		";
 		//echo $consulta2;
@@ -294,6 +324,90 @@ $env = parse_ini_file('.env');
 		}
 
 		echo json_encode( $datos ); //fco esta linea codifica para ser leido como json 
+
+
+	} elseif($funcion == 'updateOrden'){
+
+		if( isset($_POST['datos']) ) {
+			$datos = $_POST['datos'];
+		  } else {
+			die("Solicitud no válida.");
+		  }
+		  $array = array(); 
+		  parse_str($datos, $array); 
+		  //echo json_encode($array);
+		  $ot = $array['NroLlamada'];
+		  $customer = $array['CodigoCliente'];
+		  $customerName = $array['NombreCliente'];
+		  $itemCode = $array['Chassis'];
+		  $itemName = $array['vehiculo'];
+		  $street = $array['Chapa'];
+		  $status = $array['OtEstado'];
+		  $assignee = $array['Asesor'];
+		  $nombreAsesor = $array['NombreAsesor'];
+		  $u_kmEntrada = $array['Kilometraje'];
+		  $u_tipo = $array['TipoServicio'];
+		  $callType = $array['TipoLlamada'];
+		  $description = $array['PedidoCliente'];
+		  $subject = $array['Motivo'];
+		  $room = $array['Identificador'];
+		  $sucursal = $_POST['sucursal'];
+		  $combustible = $array['combustible'];
+		  $codigoCliente2 = $array['codigoCliente2'];
+		  $proCodigo = $array['proCodigo'];
+
+		$consulta = "
+			update oscl 
+			set customer = '$customer'
+			, custmrname = '$customerName'
+			, itemcode = '$itemCode'
+			, itemname = '$itemName'
+			, street = '$street'
+			, assignee = '$assignee'
+			, u_kmentrada = $u_kmEntrada
+			, u_tipo = '$u_tipo'
+			, calltype = '$callType'
+			, descrption = '$description'
+			, subject = '$subject'
+			, room = '$room'
+			, nombreasesor = '$nombreAsesor'
+			, u_sucursal = '$sucursal'
+			, u_combustible = '$combustible'
+			where callid = $ot
+
+		";
+
+		$rs = pg_query( $conexión, $consulta );
+		if ( !$rs )
+		{
+			exit( "Error en la consulta SQL" );
+		}
+
+		$consulta2 = 
+		"
+		update orden_trabajo
+		set 
+		  to_codigo = '$u_tipo',  -- tipoServicio 1->cargo cliente 2->pre-entrega 3->garantia 
+		  loc_codigo = '$sucursal', -- 1 central (sucursal) 
+		  --cli_codigo = '$codigoCliente2', -- codigoCliente ->ruc 
+		  ot_pedido = '$subject',  -- Motivo 
+		  ot_km_entrada= '$u_kmEntrada', -- Kilometraje
+		  ot_chapa= '$street', -- Chapa
+		  ot_chassis= '$itemCode', -- Chassis
+		  --pro_codigo= '$proCodigo', -- Chassis
+		  ot_indicador_combustible= $combustible 
+		where ot_numero = $ot 
+	   
+	  ";
+	  //echo $consulta2;
+
+	  $rs = pg_query( $conexión2, $consulta2 );
+	  if ( !$rs )
+	  {
+		  exit( "Error en la consulta SQL" );
+	  }
+
+	  echo 'ok';
 
 
 	} elseif($funcion == 'ConsultarTurnos'){

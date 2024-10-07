@@ -8,7 +8,7 @@ $data     = '../jqScribble/' . md5($asesor) . '.png';
 $filename = $_POST['OT'] . '.png'; 
 $evento   = $_POST['EVENTO']; 
 $path     = 'imagenes/'; 
-
+ 
 
 /*
 	1 - GUARDAR IMAGEN 

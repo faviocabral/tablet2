@@ -430,7 +430,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
 					
-						<div class="col-md-0 pull-left" ><h3><i class="fa fa-car text-red" style="font-size:36px;" pull-left></i>&nbsp;&nbsp;LLAMADA SERVICIOS</h3></div>
+						<div class="col-md-0 pull-left" ><h3><i class="fa fa-car text-red" onclick="ImagenOt2(15)" style="font-size:36px;" pull-left></i>&nbsp;&nbsp;LLAMADA SERVICIOS</h3></div>
 					</div>
 					<form class="form-horizontal" id="form1" action="" data-toggle="validator" >
 						<div class="box-body">
@@ -486,9 +486,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <span class="label label-warning" style="padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <input type="text" class="text-black" style="border-radius: 5px;" id="contacto_email" name="contacto_email" placeholder="____________@_______.com"></span>
                     </h3>
                     </div>
-										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Cliente:</label></div> <div class="col-sm-3"> <div class="input-group"><div class="input-group-btn" > <button type="button" class="btn btn-warning" onclick="ConsultarCliente2();"><i class="fa fa-search-plus">&nbsp;&nbsp;</i></button> </div> <input type="text" class="form-control lock" placeholder="" id="CodigoCliente" name="CodigoCliente"></div></div> <div class="col-sm-9"><input type="text" class="form-control lock" placeholder="" id="NombreCliente" name="NombreCliente"></div> </div>
+										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Cliente:</label></div> <div class="col-sm-3"> <div class="input-group"><div class="input-group-btn" > <button type="button" class="btn btn-warning" onclick="ConsultarCliente2();"><i class="fa fa-search-plus">&nbsp;&nbsp;</i></button> </div> <input type="text" class="form-control lock" placeholder="" id="CodigoCliente" data-id="" name="CodigoCliente"></div></div> <div class="col-sm-9"><input type="text" class="form-control lock" placeholder="" id="NombreCliente" name="NombreCliente"></div> </div>
 										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Telefono:</label></div> <div class="col-sm-12"><input type="text" id="Telefono" name="telefono" class="form-control lock" placeholder="" ></div></div>
-                    <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Chassis:</label></div> <div class="col-sm-12"><input type="text" id="Chassis" name="Chassis" class="form-control lock" placeholder="" ></div></div>
+                    <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Chassis:</label></div> <div class="col-sm-12"><input type="text" id="Chassis" data-id="" name="Chassis" class="form-control lock" placeholder="" ></div></div>
                     <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Nro Serie:</label></div> <div class="col-sm-12"><input type="text" id="NroSerie" name="NroSerie" class="form-control lock" placeholder="" ><input type="text" id="NroSerie2" name="NroSerie2" class="form-control lock" placeholder="" ></div></div>
 										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Vehiculo:</label></div> <div class="col-sm-12"><input type="text" id="Vehiculo" name="vehiculo" class="form-control lock" placeholder="" ></div></div>
 										<div class="form-group"> <div class="col-sm-12"><label class=" control-label">Chapa:</label></div> <div class="col-sm-12"><input type="text" id="Chapa" name="Chapa" class="form-control text-uppercase" placeholder=""></div></div>
@@ -699,23 +699,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
            $("a[onClick='setSucursal(this)']").removeClass("btn btn-danger");
            $("a[onClick='setSucursal(this)']").addClass("btn btn-default");
 
-			if(localStorage.sucursal == 'MRA KIA'){
-			   $("#" + 'MRAKIA').css("font-size", "30px");
-			   $("#" + 'MRAKIA').css("color", "white");
-			   $("#" + 'MRAKIA').removeClass("btn btn-default");
-			   $("#" + 'MRAKIA').addClass("btn btn-danger");
+			if(localStorage.sucursal == '3'){
+			   $("#" + 'santaTeresa').css("font-size", "30px");
+			   $("#" + 'santaTeresa').css("color", "white");
+			   $("#" + 'santaTeresa').removeClass("btn btn-default");
+			   $("#" + 'santaTeresa').addClass("btn btn-danger");
 
-			}else if(localStorage.sucursal == 'MRA FCA'){
-			   $("#" + 'MRAFCA').css("font-size", "30px");
-			   $("#" + 'MRAFCA').css("color", "white");
-			   $("#" + 'MRAFCA').removeClass("btn btn-default");
-			   $("#" + 'MRAFCA').addClass("btn btn-danger");
+			}else if(localStorage.sucursal == '2'){
+			   $("#" + 'santaRita').css("font-size", "30px");
+			   $("#" + 'santaRita').css("color", "white");
+			   $("#" + 'santaRita').removeClass("btn btn-default");
+			   $("#" + 'santaRita').addClass("btn btn-danger");
 				
-			}else if(localStorage.sucursal == 'MRA MPY'){
-			   $("#" + 'MRAMPY').css("font-size", "30px");
-			   $("#" + 'MRAMPY').css("color", "white");
-			   $("#" + 'MRAMPY').removeClass("btn btn-default");
-			   $("#" + 'MRAMPY').addClass("btn btn-danger");
+			}else if(localStorage.sucursal == '1'){
+			   $("#" + 'cde').css("font-size", "30px");
+			   $("#" + 'cde').css("color", "white");
+			   $("#" + 'cde').removeClass("btn btn-default");
+			   $("#" + 'cde').addClass("btn btn-danger");
 				   
 			}else{
 			   $("#" + localStorage.sucursal).css("font-size", "30px");
@@ -725,7 +725,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			}
 
         }else{
-          localStorage.setItem("sucursal","ALIDER"); //por defecto fca 
+          localStorage.setItem("sucursal","1"); //por defecto fca 
         }
 
         //controlar si esta seteado el asesor 
@@ -1122,7 +1122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       var NroLlamada = ot; 
       var evento = 1; // 1 es para guardar la imagen con el nro de ot.
       var asesor_ = $("#Asesor").text().trim(); 
-        $.post( window.origin + '/imagenes/image_save2.php', { OT: NroLlamada, EVENTO: evento, asesor: asesor_ }, function(response){ 
+        $.post( 'imagenes/image_save2.php', { OT: NroLlamada, EVENTO: evento, asesor: asesor_ }, function(response){ 
           console.log('ingreso para guardar la imagen jajajaja '); 
           console.log(response ); 
         }); 
@@ -2025,6 +2025,7 @@ async	function NuevoCliente(){
 		function AsignarCliente2(el){
         var sucu = localStorage.sucursal;
         $("#CodigoCliente").val($(el).attr('data-documento'))
+        $( "#CodigoCliente" ).data( "id" , $(el).attr('data-codigo'))
         $("#NombreCliente").val($(el).attr('data-nombre'))
         $("#Telefono").val($(el).attr('data-telefono'))
         sucu = sucu.toLowerCase(); 
@@ -2032,7 +2033,6 @@ async	function NuevoCliente(){
 							type: 'success' ,
 							html: 'Consulta exitosa' 
 						})
-
     }
 
 		function AsignarCliente(el){
@@ -2040,6 +2040,7 @@ async	function NuevoCliente(){
         var cliente = $(el).attr('data-cliente'); 
         var sucu = localStorage.sucursal;
         $("#Chassis").val($(el).attr('data-vin'))
+        $("#Chassis").data( "id" , $(el).attr('data-codigo'))        
         $("#NroSerie").val($(el).attr('data-vin'))
         $("#NroSerie2").val($(el).attr('data-vin'))
         $("#Vehiculo").val($(el).attr('data-vehiculo'))
@@ -2997,6 +2998,10 @@ async	function NuevoCliente(){
       result +=  '&NombreAsesor=' + $('#Asesor').text().trim(); // Nombre de asesor 
       result +=  '&IpCliente=' + '<?php get_ip(); ?>'; // Nombre de asesor 
       result +=  '&campanha=' + localStorage.campanha; // Nombre de asesor 
+      result +=  '&combustible=' + $(".dm-valueP").text(); // Nombre de asesor
+      result +=  '&codigoCliente2=' + $( "#CodigoCliente" ).data( "id" ); // Nombre de asesor
+      result +=  '&proCodigo=' + $( "#Chassis" ).data( "id" ); // Nombre de asesor
+
       if(localStorage.getItem("listado-campaña")){
         result+= '&listadoCampanhas=' + localStorage.getItem('listado-campaña');
       }
@@ -3011,29 +3016,17 @@ async	function NuevoCliente(){
 			}else {	
 
         var sucu = localStorage.sucursal; 
-        sucu = sucu.toLowerCase(); 
-        var serieDoc , sucuCod, entidad;
-
-          //para asignar serie y sucursal 
-          if(sucu == 'servicio' ){//fca 
-            serieDoc  = 1;
-            sucuCod   = '1';
-            entidad   = 'changan';
-          }else if(sucu == 'cde' ) {//mpy
-            serieDoc  = 1;
-            sucuCod   = '';
-            entidad   = '';
-          }
 
           if(evento == 1 ){
             $.ajax( { method: "POST", url: 'consulta.php', data : {datos : result , funcion: 'insertarOrden' , sucursal : sucu  }, dataType: 'html'})
             .done(function(rs) {
               console.log('paso por control... ');
+              console.log(rs)
               var respuesta = JSON.parse(rs);
               console.log(respuesta)
                 //GuardarImagen2(rs); //guardar la imagen del combustible ... 
-                //ImagenOt2(rs); // guardar con el nro de orden la imagen del auto ....
-                RecuperarOt(respuesta[0]['callid']); 
+                ImagenOt2(respuesta[0]['ot']); // guardar con el nro de orden la imagen del auto ....
+                RecuperarOt(respuesta[0]['ot']); 
             })
             .fail(function(jqxhr, textStatus, error) {
               swal({ 
@@ -3047,40 +3040,26 @@ async	function NuevoCliente(){
 
           }else{ //para actualizar la ot 
             // solo los campos de comentarios y pedido cliente actualiza  , agregar aqui el campo que se quiera actualizar.
-            let updField = ['Subject', 'Description' , "Street" ]
-            delete sap['userFields']
-            Object.keys(sap['fields']).filter(key => !updField.includes(key) ).forEach(key=> delete sap['fields'][key])
-
-            console.log(sap);
-            //swal.close();
-            var datos = JSON.stringify(sap);
-            console.log(datos);
-
-            let origen = (window.origin.includes('crm') || window.origin.includes('ngrok') ? window.origin + '/sap-api/' : 'http://192.168.10.80:3011/')
-            if( window.origin.includes('ngrok') || window.origin.includes('slow-bugs') ){ origen = 'https://0d4a-190-104-135-223.ngrok-free.app/'}
-            var url = origen+entidad+'/sap/191/where/'+$("#NroLlamada").val();
-            fetch(url, {
-              method: 'PUT',
-              headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-              },
-              body: datos
-            })
-            .then(res => res.json())
-            .then(res => {
-              console.log(res.status);
-              console.log(res);
-              if(res.status == 'error'){
+            $.ajax( { method: "POST", url: 'consulta.php', data : {datos : result , funcion: 'updateOrden' , sucursal : sucu  }, dataType: 'html'})
+            .done(function(rs) {
+              console.log('paso por control... ');
+              console.log(rs)
+              if (rs === 'ok') {
                 swal({ 
-                      type: 'error', 
-                        title: 'Atencion', 
-                        html: res.message 
-                    }); 
-                return;
-              }else{
-                  RecuperarOt($("#NroLlamada").val() ); 
+                    type: 'success', 
+                    title: 'Registro Actualizado ', 
+                    ///html: '<h1>Nro: ' + $('#NroLlamada').val() + ' !!!</h1>' 
+                  })
               }
+            })
+            .fail(function(jqxhr, textStatus, error) {
+              swal({ 
+                  type: 'error', 
+                    title: 'Atencion', 
+                    html: error 
+                }); 
+              return;
+              console.log(error);
             });
 
           } //fin control de eventos 
@@ -3092,9 +3071,7 @@ async	function NuevoCliente(){
     function RecuperarOt(result){ 
       ResetForm();//fco refresca el form  
         //fco ajax consultar datos!!! 
-        //marilina
         var sucu = localStorage.sucursal;
-        sucu = sucu.toLowerCase(); 
 
         $.ajax( { method: "POST", url: "consulta.php", data : { NroOt : result , funcion: 'ConsultarOt' , sucursal: sucu }, dataType: 'json'}) 
 
@@ -3119,159 +3096,6 @@ async	function NuevoCliente(){
               title: 'Registro Grabado ', 
               html: '<h1>Nro: ' + $('#NroLlamada').val() + ' !!!</h1>' 
             }).then( async function() {
-/*              
-              //solo caso de kia victoria 
-            if(sucu === 'victoria'){
-                localStorage.setItem('printer-asesor', 'si')
-                localStorage.setItem('printer-taller', 'si')
-                let grid = `
-                <style>
-                  .printer-in{ 
-                    background:#00aaa0;
-                    color:white;
-                    box-shadow: 0 0 1px rgba(0,0,0,.125),0 1px 3px rgba(0,0,0,.2)  
-                  }
-                  .printer-out{ 
-                    background:#ececec;
-                    color:#9ba6a5;
-                  }
-                  .printer{
-                      border-radius:5px; 
-                      height:80px; 
-                      display:flex; 
-                      align-items:center; 
-                      padding:15px; 
-                      font-size:24px; 
-                      font-weight:bold;
-                      text-align:center;
-                  }
-                </style>
-
-                <div class="row" style="display:flex; justify-content:center;">
-                  <div class="col-sm-4 rounded " style=" display:flex; justify-content:center;align-items:center; height:100px;"> 
-                    <div class="printer printer-in" id="printer-asesor" onclick="upPrinter(this)"> impresora <br> Asesor</div>
-                  </div>
-                  <div class="col-sm-4 rounded" style=" display:flex; justify-content:center;align-items:center; height:100px;" >
-                    <div class="printer printer-in" id="printer-taller" onclick="upPrinter(this)"> impresora <br> Taller</div>
-                  </div>
-                </div>                
-                `
-                swal({
-                      title:'Seleccione la impresora',
-                      html: grid,
-                      showConfirmButton:true,
-                      allowOutsideClick:false, 
-                      showCancelButton: true 
-                      //cancelButtonText: 'Cancelar'
-                }).then(async e=>{
-                  swal({
-                      title:'Imprimiendo Espere...',
-                      html: '<span class="glyphicon glyphicon-cog" style=" animation: 2s rotate360 infinite linear; font-size:100px;"></span> <div><h4 id="print-status-asesor"></h4> <h4 id="print-status-taller"></h4> </div>',
-                      showConfirmButton:false,
-                      allowOutsideClick:false,
-                      showCancelButton: true ,
-                      onClose: ()=>{ ImprimirOt() } //caso que cancele su impresion y desea ver en pantalla                       
-                      //cancelButtonText: 'Cancelar'
-                  });
-
-                  if(localStorage.getItem('printer-asesor') === 'si'){
-                    await fetch(`http://192.168.10.54:3200/print/${$('#NroLlamada').val()}/1/1`) // por defecto le enviamos copia 1 el ultimo parametro
-                    .then(response => response.json())
-                    .then(data => {
-                      $("#print-status-asesor").html('Impresion Asesor lista')
-                      console.log('ya imprimio todo 1................')
-                      if(localStorage.getItem('printer-taller') === 'no') alert('impresion Lista !!!!')
-
-                        //if (!data.ok) alert('hubo problemas al imprimir !')
-                    })
-                    .catch(e => alert('hubo un error en la impresion '))
-                  }
-
-                  if(localStorage.getItem('printer-taller') === 'si'){
-                    await fetch(`http://192.168.10.54:3200/print/${$('#NroLlamada').val()}/2/1`) // por defecto le enviamos copia 1 el ultimo parametro
-                    .then(response => response.json())
-                    .then(data => {
-                      $("#print-status-taller").html('Impresion Taller lista')
-                        console.log('ya imprimio todo 2................')
-                        swal.close()
-                        //if (!data.ok) alert('hubo problemas al imprimir !')
-                        alert('impresion Lista !!!!')
-                        ImprimirOt()
-                    })
-                    .catch(e => alert('hubo un error en la impresion '))
-                  }
-                  swal.close()                      
-                })
-
-            }else if( sucu === 'alider'){
-              localStorage.setItem('copia-printer', 2)
-              let grid = `
-                <style>
-                  .printer-in{ 
-                    background:#00aaa0;
-                    color:white;
-                    box-shadow: 0 0 1px rgba(0,0,0,.125),0 1px 3px rgba(0,0,0,.2)  
-                  }
-                  .printer-out{ 
-                    background:#ececec;
-                    color:#9ba6a5;
-                  }
-                  .printer{
-                      border-radius:5px; 
-                      height:80px; 
-                      display:flex; 
-                      align-items:center; 
-                      padding:15px; 
-                      font-size:24px; 
-                      font-weight:bold;
-                      text-align:center;
-                  }
-                </style>
-
-                <div class="row" style="display:flex; justify-content:center;">
-                  <div class="col-sm-4 rounded " style=" display:flex; justify-content:center;align-items:center; height:100px;"> 
-                    <div class="printer printer-out" id="printer-copia1" onclick="copiaPrinter(this)"> 1 <br> copia</div>
-                  </div>
-                  <div class="col-sm-4 rounded" style=" display:flex; justify-content:center;align-items:center; height:100px;" >
-                    <div class="printer printer-in" id="printer-copia2" onclick="copiaPrinter(this)"> 2 <br> copias</div>
-                  </div>
-                </div>                
-                `
-                swal({
-                      title:'Impresion Stellantis',
-                      html: grid,
-                      showConfirmButton:true,
-                      allowOutsideClick:false, 
-                      showCancelButton: true, 
-                      onClose: ()=>{ ImprimirOt() } //caso que cancele su impresion y desea ver en pantalla 
-                })
-                .then(async e=>{
-                  swal({
-                      title:'Imprimiendo Espere...',
-                      html: '<span class="glyphicon glyphicon-cog" style=" animation: 2s rotate360 infinite linear; font-size:100px;"></span> <div><h4 id="print-status-asesor"></h4> <h4 id="print-status-taller"></h4> </div>',
-                      showConfirmButton:false,
-                      allowOutsideClick:false,
-                      showCancelButton: true 
-                      //cancelButtonText: 'Cancelar'
-                  });
-                    let copias = Number( localStorage.getItem('printer-copia'))
-                    await fetch(`http://192.168.10.54:3200/print/${$('#NroLlamada').val()}/3/${copias}`)
-                    .then(response => response.json())
-                    .then(data => {
-                      console.log('ya imprimio todo 1................')
-                      alert('impresion Lista !!!!')
-                      ImprimirOt()                      
-                        //if (!data.ok) alert('hubo problemas al imprimir !')
-                    })
-                    .catch(e => alert('hubo un error en la impresion '))
-                })
-                $(`#printer-copia2`).addClass('printer-in')
-
-              //ImprimirOt();
-            }else{
-            ImprimirOt();
-          }
-*/
           ImprimirOt();
 
         }); 
