@@ -235,7 +235,7 @@ $env = parse_ini_file('.env');
 
 		  $consulta = 
 				  "
-				  insert into oscl ( docnum, callid , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor, u_sucursal, u_combustible )
+				  insert into oscl ( docnum, callid , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor, u_sucursal, combustible )
 				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible );
 
 				  ";
