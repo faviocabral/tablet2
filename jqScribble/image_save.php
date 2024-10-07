@@ -9,5 +9,6 @@ $data = substr($data, strpos($data, ",")+1);
 $data = base64_decode($data); 
 $imgRes = imagecreatefromstring($data); 
 header('Content-Type: image/png');
+echo 'imagen... '  . $imgRes;
 if($imgRes !== false && imagepng($imgRes, $filename) === true) 
     echo "<img src='jqScribble/{$filename}?" . rand() . "' alt='jqScribble Created Image'/>";
