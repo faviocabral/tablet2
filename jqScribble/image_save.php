@@ -1,5 +1,4 @@
 <?php
-echo 'entro para crear la imagen....... ';
 $data = $_POST['imagedata']; 
 //$filename = 'jqScribbleImage.png';
 $asesor = $_POST['asesor']; 
