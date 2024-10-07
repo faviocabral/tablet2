@@ -265,7 +265,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" ><p style="margin:0px; margin-bottom: 8px; text-align: center; font-size: 20px;"> NRO SERVICIO: &nbsp;<span id="NroOt2">0029246</span></p>
-<p style="margin-bottom:0px; font-size: 13px; text-align: center; font-weight: bold;"><span class="glyphicon glyphicon-user"></span> ASESOR : <span class="Asesor2"></span></p> 
+<p style="margin-bottom:0px; font-size: 13px; text-align: center; font-weight: bold;"><span class="glyphicon glyphicon-user"></span> ASESOR : <span class="Asesor2" id="Asesor2"></span></p> 
 			</td>
 		</tr>
 	  
