@@ -74,7 +74,7 @@ $env = parse_ini_file('.env');
 						'' Observaciones, 
 						'' DetalleVehiculo , 
 						'' Accesorios, 
-						u_combustible Combustible, 
+						combustible Combustible, 
 						'' contacto_cliente, 
 						'' FechaPrometida, 
 						u_sucursal sucursal ,
