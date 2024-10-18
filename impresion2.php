@@ -111,6 +111,7 @@
 	      		<!-- <span style="margin-right: 5px;"><strong>Nro Doc: </strong><span id="NroDocumento"></span> </span> -->
 	      		<!--<span style="margin-right: 20px;"><strong>Nro OT: </strong><span id="NroOt"></span> </span>-->
 	      		<span style="margin-right: 5px;"><strong>Asesor: </strong><span id="Asesor"></span> </span>
+	      		<span style="margin-right: 5px;"><strong>Tecnico: </strong><span id="tecnico_nombre"></span> </span>
 	      		<!-- <span style="margin-right: 5x;"><strong>contacto : </strong><span id="contacto_cliente"></span> </span>
 	      		<span style="margin-right: 5x;"><strong>Email: </strong><span id="contacto_email"></span> </span> -->
       	</td>

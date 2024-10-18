@@ -3020,6 +3020,7 @@ async	function NuevoCliente(){
       result +=  '&combustible=' + $(".dm-valueP").text(); // Nombre de asesor
       result +=  '&codigoCliente2=' + $( "#CodigoCliente" ).data( "id" ); // Nombre de asesor
       result +=  '&proCodigo=' + $( "#Chassis" ).data( "id" ); // Nombre de asesor
+      result +=  '&nombreTecnico=' + $('#tecnico').find(":selected").text(); // Nombre de tecnico
 
       if(localStorage.getItem("listado-campaña")){
         result+= '&listadoCampanhas=' + localStorage.getItem('listado-campaña');

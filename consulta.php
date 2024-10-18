@@ -82,7 +82,8 @@ $env = parse_ini_file('.env');
 						'' contacto_email , 
 						'' lavado,
 						'' costoServicio, 
-						codigo_tecnico tecnico
+						codigo_tecnico tecnico, 
+						nombre_tecnico tecnico_nombre
 					FROM OSCL 
 					WHERE callID = $NroOt  
 				";
@@ -221,6 +222,7 @@ $env = parse_ini_file('.env');
 		  $codigoCliente2 = $array['codigoCliente2'];
 		  $proCodigo = $array['proCodigo'];
 		  $tecnico = $array['tecnico'];
+		  $tecnicoNombre = $array['nombreTecnico'];
 	  
 		  $consulta3 = " Select coalesce(max(ot_numero),0) + 1 as ot  From orden_trabajo where loc_codigo = $sucursal ";
 		  $rs = pg_query( $conexión2, $consulta3 );
@@ -237,8 +239,8 @@ $env = parse_ini_file('.env');
 
 		  $consulta = 
 				  "
-				  insert into oscl ( docnum, callid , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor, u_sucursal, combustible, codigo_tecnico )
-				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible, $tecnico );
+				  insert into oscl ( docnum, callid , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor, u_sucursal, combustible, codigo_tecnico, nombre_tecnico )
+				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible, $tecnico, '$tecnicoNombre' );
 
 				  ";
 		  //echo $consulta;
@@ -361,6 +363,7 @@ $env = parse_ini_file('.env');
 		  $codigoCliente2 = $array['codigoCliente2'];
 		  $proCodigo = $array['proCodigo'];
 		  $tecnico = $array['tecnico'];
+		  $tecnicoNombre = $array['nombreTecnico'];
 
 		$consulta = "
 			update oscl 
@@ -380,6 +383,7 @@ $env = parse_ini_file('.env');
 			, u_sucursal = '$sucursal'
 			, combustible = '$combustible'
 			, codigo_tecnico = '$tecnico'
+			, nombre_tecnico = '$tecnicoNombre'
 			where callid = $ot
 
 		";
