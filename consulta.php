@@ -879,7 +879,7 @@ $env = parse_ini_file('.env');
 
 	} elseif($funcion == 'Asesor' ){
 
-		$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (8,14,32) ";
+		$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (8,14,32,434 ) ";
 		
 		$rs = pg_query( $conexión2, $consulta );
 		if ( !$rs )
