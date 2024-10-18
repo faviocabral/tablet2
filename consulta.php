@@ -224,7 +224,7 @@ $env = parse_ini_file('.env');
 		  $rs = pg_query( $conexión2, $consulta3 );
 		  if ( !$rs )
 		  {
-			  exit( "Error en la consulta SQL" );
+			  exit( "Error en la consulta SQL 1" );
 		  }
 		  while ( $row = pg_fetch_array($rs) )
 		  {
@@ -243,7 +243,7 @@ $env = parse_ini_file('.env');
 		  $rs = pg_query( $conexión, $consulta );
 		  if ( !$rs )
 		  {
-			  exit( "Error en la consulta SQL" );
+			  exit( "Error en la consulta SQL 2" );
 		  }
 		  //fco resultado de varios registros en json 
 		  while ( $row = pg_fetch_array($rs) )
@@ -320,7 +320,7 @@ $env = parse_ini_file('.env');
 		$rs = pg_query( $conexión2, $consulta2 );
 		if ( !$rs )
 		{
-			exit( "Error en la consulta SQL" );
+			exit( "Error en la consulta SQL 3" );
 		}
 
 		echo json_encode( $datos ); //fco esta linea codifica para ser leido como json 
@@ -517,7 +517,8 @@ $env = parse_ini_file('.env');
 						, (select top 1 cast( v.DocDate as date)  
 							from  OINV v with(nolock) , INV1 d with(nolock) 
 							where v.DocEntry = d.DocEntry 
-							---and v.cardname not like '%garden%' 
+							and v.u_liiv = 1 
+							and v.U_ConceptoFactura = 'vhe'
 							and	d.ItemCode = t3.itemCode ORDER BY V.DOCDATE ASC ) FechaVenta 
 					from OINS with(nolock)
 							left outer join OCRD T2 with(nolock) on oins.customer = t2.CardCode 
@@ -876,6 +877,23 @@ $env = parse_ini_file('.env');
 		//odbc_close ( $conexion );
 
 	} elseif($funcion == 'Asesor' ){
+
+		$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (8,14,32) ";
+		
+		$rs = pg_query( $conexión2, $consulta );
+		if ( !$rs )
+		{
+			exit( "Error en la consulta SQL" );
+		}
+		//fco resultado de varios registros en json 
+		while ( $row = pg_fetch_array($rs) )
+		{
+			$valor[] = $row;
+		}	
+		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
+		////odbc_close ( $conexion );
+
+	} elseif($funcion == 'tecnico' ){
 
 		$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (8,14,32) ";
 		

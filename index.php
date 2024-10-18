@@ -582,6 +582,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="form-group"><div class="col-sm-12"> <textarea class="form-control lock hide" row="10" placeholder="Enter..." id="Observacion" name="Observacion" ></textarea> </div></div>
                   <div class="form-group"><div class="col-sm-12"> <textarea class="form-control lock hide" row="10" placeholder="Enter..." id="Combustible" name="Combustible" >0</textarea> </div></div>
                   <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Observacion:</label></div> <div class="col-sm-12"> <textarea class="form-control" row="10" placeholder="Enter..." id="Observacion2" name="Observacion2" ></textarea> </div></div>
+                  <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Tecnico:</label></div> 
+											<div class="col-sm-12">
+											<select class="form-control" id="tecnico" name="tecnico">
+											</select>
+											</div>
+                    </div>
+
                   <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Costo Servicio:</label></div> <div class="col-sm-12"><input type="text" id="costoServicio" name="costoServicio" class="form-control " placeholder=""></div></div>
                   <div class="form-group"> <div class="col-sm-12"><label class=" control-label">Lavado:</label></div> <div class="col-sm-12"> <input class="form-check-input" style="width: 30px; height: 30px;" type="checkbox" checked name="lavado" id="lavado" value="si"> </div></div>
 								</div>	
