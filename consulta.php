@@ -81,7 +81,8 @@ $env = parse_ini_file('.env');
 						'' campanha , 
 						'' contacto_email , 
 						'' lavado,
-						'' costoServicio
+						'' costoServicio, 
+						codigo_tecnico tecnico
 					FROM OSCL 
 					WHERE callID = $NroOt  
 				";
@@ -219,6 +220,7 @@ $env = parse_ini_file('.env');
 		  $combustible = $array['combustible'];
 		  $codigoCliente2 = $array['codigoCliente2'];
 		  $proCodigo = $array['proCodigo'];
+		  $tecnico = $array['tecnico'];
 	  
 		  $consulta3 = " Select coalesce(max(ot_numero),0) + 1 as ot  From orden_trabajo where loc_codigo = $sucursal ";
 		  $rs = pg_query( $conexión2, $consulta3 );
@@ -235,8 +237,8 @@ $env = parse_ini_file('.env');
 
 		  $consulta = 
 				  "
-				  insert into oscl ( docnum, callid , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor, u_sucursal, combustible )
-				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible );
+				  insert into oscl ( docnum, callid , customer , custmrname , itemcode , itemname, street, status, assignee, u_kmentrada, u_tipo, calltype , descrption , subject, room, nombreasesor, u_sucursal, combustible, codigo_tecnico )
+				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible, $tecnico );
 
 				  ";
 		  //echo $consulta;
@@ -283,7 +285,8 @@ $env = parse_ini_file('.env');
 			tiene_licitacion, -- ''
 			ot_comentario_licitacion, --'' 
 			cli_lleva_rep_viejo, --''
-			ot_indicador_combustible --0
+			ot_indicador_combustible, --0
+			fun_probador --codigo mecanico 
 		  )
 		 
 		  values (
@@ -313,7 +316,8 @@ $env = parse_ini_file('.env');
 			false, --tiene_licitacion, -- ''
 			'', --ot_comentario_licitacion, --'' 
 			false, --cli_lleva_rep_viejo, --''
-			$combustible --ot_indicador_combustible --0
+			$combustible, --ot_indicador_combustible --0
+			$tecnico --codigo tecnico mecanico 
 			);
 		";
 		//echo $consulta2;
@@ -356,6 +360,7 @@ $env = parse_ini_file('.env');
 		  $combustible = $array['combustible'];
 		  $codigoCliente2 = $array['codigoCliente2'];
 		  $proCodigo = $array['proCodigo'];
+		  $tecnico = $array['tecnico'];
 
 		$consulta = "
 			update oscl 
@@ -374,6 +379,7 @@ $env = parse_ini_file('.env');
 			, nombreasesor = '$nombreAsesor'
 			, u_sucursal = '$sucursal'
 			, combustible = '$combustible'
+			, codigo_tecnico = '$tecnico'
 			where callid = $ot
 
 		";
@@ -396,7 +402,8 @@ $env = parse_ini_file('.env');
 		  ot_chapa= '$street', -- Chapa
 		  ot_chassis= '$itemCode', -- Chassis
 		  --pro_codigo= '$proCodigo', -- Chassis
-		  ot_indicador_combustible= $combustible 
+		  ot_indicador_combustible= $combustible, 
+		  fun_probador = $tecnico
 		where ot_numero = $ot 
 	   
 	  ";

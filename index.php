@@ -2858,6 +2858,8 @@ async	function NuevoCliente(){
       if (activo == 1){ //fco bloquear 
         $('form').find('input:not(.lock), textarea:not(.lock), button, select:not(.lock)').prop('disabled',true); //esta linea sirve para bloquear todos los campos 
         $('#FechaPrometida').prop('disabled',false);
+        $('#tecnico').prop('disabled',false);
+
         $(".botonera > div > a").prop("onclick", null); 
         $("#NuevoCliente").prop("onclick", null)
         //$("#EditarImagen").prop("onclick", null)
@@ -2966,6 +2968,16 @@ async	function NuevoCliente(){
           $("#Motivo").focus();
         });
         $("#Motivo").focus();
+        return ;
+      }else if ($('#tecnico').find(":selected").val() === '0'){
+
+        swal({
+          type:'info',
+          title:'Debe seleccionar Tecnico !!'
+        }).then(function () {
+          $("#tecnico").focus();
+        });
+        $("#tecnico").focus();
         return ;
       }
 
