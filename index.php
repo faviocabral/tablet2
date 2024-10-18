@@ -771,7 +771,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
          //$(".datepicker").datetimepicker();
 
-
+          tecnicos()
     });
 
     function setSucursal(elem){
@@ -3777,6 +3777,41 @@ makeblob = function (dataURL) {
       }
 
     }
+
+
+    function tecnicos(){
+      var sucu = localStorage.sucursal; 
+      //fco ajax consultar datos!!!
+      console.log(sucu);
+      //$.ajax( { method: "POST", url: "http://172.16.16.85:8080/tablet2/consulta.php", data : { funcion: 'Asesor' , sucursal : sucu }, dataType: 'json'})
+      $.ajax( { method: "POST", url: "consulta.php", data : { funcion: 'tecnicos' , sucursal : sucu }, dataType: 'json'})
+      .done(function(rs){
+        if(rs){
+          var my_html = '<option value="0"></option>\n'
+          console.log('los tecnicos ',rs);
+          rs.forEach(item=>{
+            my_html += `<option value="${item.codigo}">${item.asesor}</option>\n`
+          })
+            console.log('html tecnicos ', my_html)
+            $("#tecnico").html(my_html)
+        }else {
+          console.log('no hay tecnicos');
+        }
+
+      })
+      .fail(function(jqxhr, textStatus, error ){
+          var err = textStatus + ", " + error;
+          console.log( "Error Ajax: " + err );//fco para ver en la consola de la web 
+
+          swal({
+            type: 'Error consulta',
+            html: err
+          });
+
+      });
+
+    }
+
 
     function Asesor(evento){ 
       console.log( '<?php get_ip(); ?>' ); 

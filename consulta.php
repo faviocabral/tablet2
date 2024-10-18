@@ -894,7 +894,7 @@ $env = parse_ini_file('.env');
 		echo json_encode( $valor ); //fco esta linea codifica para ser leido como json 
 		////odbc_close ( $conexion );
 
-	} elseif($funcion == 'tecnico' ){
+	} elseif($funcion == 'tecnicos' ){
 
 		$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (8,14,32) ";
 		
