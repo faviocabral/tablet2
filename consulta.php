@@ -239,7 +239,7 @@ $env = parse_ini_file('.env');
 				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible );
 
 				  ";
-		  echo $consulta;
+		  //echo $consulta;
 
 		  $rs = pg_query( $conexión, $consulta );
 		  if ( !$rs )
