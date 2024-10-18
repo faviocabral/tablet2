@@ -221,7 +221,6 @@ $env = parse_ini_file('.env');
 		  $proCodigo = $array['proCodigo'];
 	  
 		  $consulta3 = " Select coalesce(max(ot_numero),0) + 1 as ot  From orden_trabajo where loc_codigo = $sucursal ";
-		  echo $consulta3;
 		  $rs = pg_query( $conexión2, $consulta3 );
 		  if ( !$rs )
 		  {
@@ -240,7 +239,8 @@ $env = parse_ini_file('.env');
 				  values (0, $ot, '$customer' , '$customerName' , '$itemCode' , '$itemName' , '$street', '$status', '$assignee', '$u_kmEntrada', '$u_tipo', '$callType', '$description', '$subject', '$room', '$nombreAsesor', '$sucursal', $combustible );
 
 				  ";
-		  //echo $consulta;
+		  echo $consulta;
+
 		  $rs = pg_query( $conexión, $consulta );
 		  if ( !$rs )
 		  {
