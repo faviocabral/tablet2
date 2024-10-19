@@ -287,8 +287,7 @@ $env = parse_ini_file('.env');
 			tiene_licitacion, -- ''
 			ot_comentario_licitacion, --'' 
 			cli_lleva_rep_viejo, --''
-			ot_indicador_combustible, --0
-			fun_probador --codigo mecanico 
+			ot_indicador_combustible --0
 		  )
 		 
 		  values (
@@ -309,7 +308,7 @@ $env = parse_ini_file('.env');
 			now(), --fec_creacion, --''
 			null, --fec_modificacion, --''
 			$assignee, --fun_asesor, --0 -- Asesor
-			0, --fun_probador, --0
+			$tecnico, --codigo tecnico mecanico 
 			$u_kmEntrada, --ot_km_entrada, -- Kilometraje
 			0, --ot_km_salida, -- 0
 			'$street', --ot_chapa, -- Chapa
@@ -318,8 +317,7 @@ $env = parse_ini_file('.env');
 			false, --tiene_licitacion, -- ''
 			'', --ot_comentario_licitacion, --'' 
 			false, --cli_lleva_rep_viejo, --''
-			$combustible, --ot_indicador_combustible --0
-			$tecnico --codigo tecnico mecanico 
+			$combustible --ot_indicador_combustible --0
 			);
 		";
 		//echo $consulta2;
