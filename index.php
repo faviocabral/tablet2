@@ -803,7 +803,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			 $("#" + id).css("color", "white");
 			 $("#" + id).removeClass("btn btn-default");
 			 $("#" + id).addClass("btn btn-danger");
-
+       tecnicos()
 
 /*
           localStorage.setItem("sucursal", $(elem).attr("id") );
@@ -3790,7 +3790,6 @@ makeblob = function (dataURL) {
       }
 
     }
-
 
     function tecnicos(){
       var sucu = localStorage.sucursal; 
