@@ -904,8 +904,19 @@ $env = parse_ini_file('.env');
 		////odbc_close ( $conexion );
 
 	} elseif($funcion == 'tecnicos' ){
+		$sucursal = $_POST['sucursal'];
 
-		$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (8,14,32) ";
+		if($sucursal == 3 ){ //santa teresa
+			$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (25,26,31)";
+
+		}elseif ($sucursal == 2 ){ //santa rita 
+			$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (425,17) ";
+
+		}elseif ($sucursal == 1 ){ //cde 
+			$consulta = "select fun_codigo Codigo, fun_nombres Asesor from funcionarios f where fun_codigo in (20,21,3)";
+			
+		}
+	
 		
 		$rs = pg_query( $conexión2, $consulta );
 		if ( !$rs )
